@@ -4072,7 +4072,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
+html,
 body {
+	height: 100%;
 	margin: 0;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif !important;
+}
+
+/* custom */
+mat-toolbar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 40px 0;
+}
+mat-label {
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif !important;
+}
+
+mat-form-field {
+	margin-top: 18px;
 }
