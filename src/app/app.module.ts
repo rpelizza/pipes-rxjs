@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderModule } from './shared/header/header.module';
 import { FooterModule } from './shared/footer/footer.module';
+import { SidenavModule } from './shared/sidenav/sidenav.module';
 
 @NgModule({
 	bootstrap: [AppComponent],
 	declarations: [AppComponent],
-	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HeaderModule, FooterModule],
+	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HeaderModule, FooterModule, SidenavModule],
 	providers: [],
 })
 export class AppModule {}
