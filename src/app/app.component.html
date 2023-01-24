@@ -5,8 +5,9 @@
 		<mat-drawer #drawer [opened]="isOpen" mode="side">
 			<app-navbar></app-navbar>
 		</mat-drawer>
-
-		<router-outlet></router-outlet>
+		<div class="container padding-outlet">
+			<router-outlet></router-outlet>
+		</div>
 	</mat-drawer-container>
 
 	<app-footer></app-footer>
