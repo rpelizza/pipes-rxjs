@@ -1,10 +1,9 @@
 <section class="home">
 	<app-header></app-header>
 
-	<mat-drawer-container class="example-container" autosize>
-		<mat-drawer #drawer class="example-sidenav" [opened]="isOpen" mode="side">
-			<p>Auto-resizing sidenav</p>
-			<p>Lorem, ipsum dolor sit amet consectetur.</p>
+	<mat-drawer-container autosize>
+		<mat-drawer #drawer [opened]="isOpen" mode="side">
+			<app-navbar></app-navbar>
 		</mat-drawer>
 
 		<router-outlet></router-outlet>
