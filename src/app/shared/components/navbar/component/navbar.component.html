@@ -7,8 +7,8 @@
 			</mat-panel-description>
 		</mat-expansion-panel-header>
 		<mat-list *ngFor="let pipe of operators.pipes">
-			<a [routerLink]="['/pipes', pipe.id]"
-				><mat-list-item> {{ pipe.name }} </mat-list-item>
+			<a [routerLink]="['/pipes', pipe.pipeId]"
+				><mat-list-item> {{ pipe.pipeName }} </mat-list-item>
 			</a>
 		</mat-list>
 	</mat-expansion-panel>

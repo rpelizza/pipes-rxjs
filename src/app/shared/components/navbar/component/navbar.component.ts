@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { RxjsInterface } from 'src/app/shared/interfaces/rxjs.interface';
 import { mockPipes } from 'src/app/shared/mock/pipes.mock';
 
 @Component({
@@ -8,6 +9,5 @@ import { mockPipes } from 'src/app/shared/mock/pipes.mock';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	public pipes: Array<any> = mockPipes;
+	public pipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
 }
