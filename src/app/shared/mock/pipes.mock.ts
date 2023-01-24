@@ -1,7 +1,7 @@
 export const mockPipes = [
 	{
 		group: 'Combinação',
-		icon: 'merge_type',
+		icon: 'merge',
 		description:
 			'As pipes de combinação (combination) do RxJS são operações que combinam várias fontes de dados em uma única saída',
 		pipes: [
@@ -23,14 +23,14 @@ export const mockPipes = [
 	},
 	{
 		group: 'Condição',
-		icon: 'check_circle',
+		icon: 'wifi_protected_setup',
 		description:
 			'As pipes de condicionais (conditional) do RxJS são operações que permitem a você tomar decisões sobre como um fluxo de dados deve ser manipulado com base em determinadas condições.',
 		pipes: [],
 	},
 	{
 		group: 'Criação',
-		icon: 'add_circle',
+		icon: 'create_new_folder',
 		description:
 			'As pipes de criação (creation) do RxJS são operações que permitem a você criar novos fluxos de dados a partir de fontes de dados existentes ou não',
 		pipes: [],
@@ -44,21 +44,28 @@ export const mockPipes = [
 	},
 	{
 		group: 'Transmição de dados',
-		icon: 'send',
+		icon: 'cell_tower',
 		description:
 			'As pipes de transmição de dados (Multicasting) do RxJS são operações que permitem a você compartilhar um fluxo de dados entre vários observadores. Com elas, é possível evitar que uma fonte de dados seja compartilhada entre vários observadores, o que pode economizar recursos e melhorar o desempenho.',
 		pipes: [],
 	},
 	{
 		group: 'Filtragem',
-		icon: 'filter_list',
+		icon: 'filter',
 		description:
 			'As pipes de filtragem (filtering) do RxJS são operações que permitem a você filtrar valores emitidos por um fluxo de dados com base em determinadas condições.',
 		pipes: [],
 	},
 	{
+		group: 'Transformação',
+		icon: 'transform',
+		description:
+			'As pipes de transformação (transform) em RxJS são usadas para modificar ou transformar os dados emitidos por um Observável antes que eles cheguem ao seu assinante. Elas são usadas para aplicar uma ou mais operações de transformação aos dados emitidos, como filtrar, mapear, agrupar, etc.',
+		pipes: [],
+	},
+	{
 		group: 'Utilitários',
-		icon: 'build',
+		icon: 'miscellaneous_services',
 		description:
 			'As pipes de Utilitários (utility) do RxJS são operações que permitem a você realizar tarefas comuns, como aguardar a conclusão de um fluxo de dados ou executar uma função para cada valor emitido por um fluxo de dados.',
 		pipes: [],

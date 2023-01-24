@@ -17,11 +17,12 @@ mat-list {
 	max-width: 320px;
 	padding: 0;
 	a {
-		font-family: 'Raleway', sans-serif !important;
 		text-decoration: none;
-		color: #484c5e;
-		font-weight: 500;
 		mat-list-item {
+			font-family: 'Raleway', sans-serif !important;
+			font-size: 15px;
+			color: #484c5e;
+			font-weight: 500;
 			height: 0;
 			padding: 15px 0;
 			display: flex;

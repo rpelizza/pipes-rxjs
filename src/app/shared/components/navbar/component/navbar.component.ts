@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { mockPipes } from 'src/app/shared/mock/pipes.mock';
 
 @Component({
 	selector: 'app-navbar',
@@ -6,5 +7,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 	styleUrls: ['./navbar.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarComponent {}
-
+export class NavbarComponent {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	public pipes: Array<any> = mockPipes;
+}

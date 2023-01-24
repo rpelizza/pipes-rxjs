@@ -1,29 +1,15 @@
 <mat-accordion multi>
-	<mat-expansion-panel>
+	<mat-expansion-panel *ngFor="let operators of pipes">
 		<mat-expansion-panel-header>
-			<mat-panel-title> Combination </mat-panel-title>
+			<mat-panel-title> {{ operators.group }} </mat-panel-title>
 			<mat-panel-description>
-				<mat-icon>account_circle</mat-icon>
+				<mat-icon>{{ operators.icon }}</mat-icon>
 			</mat-panel-description>
 		</mat-expansion-panel-header>
-
-		<mat-list>
-			<a href="#"><mat-list-item> pipe 1 </mat-list-item> </a>
-			<a href="#"><mat-list-item> pipe 2 </mat-list-item> </a>
-		</mat-list>
-	</mat-expansion-panel>
-
-	<mat-expansion-panel>
-		<mat-expansion-panel-header>
-			<mat-panel-title> Combination </mat-panel-title>
-			<mat-panel-description>
-				<mat-icon>account_circle</mat-icon>
-			</mat-panel-description>
-		</mat-expansion-panel-header>
-
-		<mat-list>
-			<a href="#"><mat-list-item> pipe 1 </mat-list-item> </a>
-			<a href="#"><mat-list-item> pipe 2 </mat-list-item> </a>
+		<mat-list *ngFor="let pipe of operators.pipes">
+			<a [routerLink]="['/pipes', pipe.id]"
+				><mat-list-item> {{ pipe.name }} </mat-list-item>
+			</a>
 		</mat-list>
 	</mat-expansion-panel>
 </mat-accordion>
