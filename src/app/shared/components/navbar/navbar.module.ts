@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './component/navbar.component';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { SharedModule } from '../../shared.module';
 
 @NgModule({
 	declarations: [NavbarComponent],
-	imports: [CommonModule, MatExpansionModule, MatIconModule, MatListModule],
+	imports: [SharedModule, MatExpansionModule, MatListModule],
 	exports: [NavbarComponent],
 })
 export class NavbarModule {}
