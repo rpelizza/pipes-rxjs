@@ -4,7 +4,22 @@ export const mockPipes = [
 		icon: 'merge_type',
 		description:
 			'As pipes de combinação (combination) do RxJS são operações que combinam várias fontes de dados em uma única saída',
-		pipes: [],
+		pipes: [
+			{
+				id: 1,
+				name: 'combineAll',
+				description:
+					'A função combineAll do RxJS é usada para combinar todas as emissões de vários observáveis ​​em um único observável. Ele é semelhante à função mergeAll, mas ao invés de emitir os valores de todos os observáveis ​​em paralelo, ele aguarda até que todos os observáveis ​​emitam pelo menos um valor antes de combinar todas as emissões em uma matriz.',
+				utilidades: [
+					'Combinação de vários observáveis: Se você tem vários observáveis ​​que emitem valores e deseja combiná-los em um único observável, você pode usar a função combineAll. Isso é útil quando você deseja trabalhar com todos os valores de vários observáveis ​​como um conjunto.',
+					'Agrupamento de valores: Se você deseja agrupar valores de vários observáveis ​​em uma matriz, você pode usar a função combineAll. Isso é útil quando você deseja organizar os valores de vários observáveis ​​em conjuntos lógicos.',
+					'Combinação de valores de saída: Se você deseja combinar os valores de saída de várias operações assíncronas em um único observável, você pode usar a função combineAll. Isso é útil quando você precisa aguardar até que todas as operações sejam concluídas antes de processar os valores de saída.',
+					'Combinação de resultados de várias consultas a API: Se você deseja combinar os resultados de várias consultas a API em um único observável, você pode usar a função combineAll. Isso é útil quando você precisa aguardar até que todas as consultas sejam concluídas antes de processar os resultados.',
+				],
+				links: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/combineall',
+				video: 'https://youtu.be/nwNrhW-rOKM',
+			},
+		],
 	},
 	{
 		group: 'Condição',
@@ -42,10 +57,10 @@ export const mockPipes = [
 		pipes: [],
 	},
 	{
-		group: 'Utility',
+		group: 'Utilitários',
 		icon: 'build',
 		description:
-			'As pipes de utilidade (utility) do RxJS são operações que permitem a você realizar tarefas comuns, como aguardar a conclusão de um fluxo de dados ou executar uma função para cada valor emitido por um fluxo de dados.',
+			'As pipes de Utilitários (utility) do RxJS são operações que permitem a você realizar tarefas comuns, como aguardar a conclusão de um fluxo de dados ou executar uma função para cada valor emitido por um fluxo de dados.',
 		pipes: [],
 	},
 	{
