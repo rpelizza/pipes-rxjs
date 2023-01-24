@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { DrawerService } from 'src/app/shared/services/drawer/drawer.service';
 import { mockPipes } from 'src/app/shared/mock/pipes.mock';
-import { RxjsInterface } from 'src/app/shared/interfaces/rxjs.interface';
+import { PipesInterface, RxjsInterface } from 'src/app/shared/interfaces/rxjs.interface';
 import { debounceTime, distinctUntilChanged, fromEvent, map, Observable } from 'rxjs';
 
 @Component({
@@ -14,9 +14,13 @@ export class HeaderComponent implements AfterViewInit {
 	@ViewChild('inputSearch', { static: true }) inputSearch!: ElementRef;
 
 	private mockedPipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
-	public options: Array<string> = ['One', 'Two', 'Three'];
+	public autocompleteOptions: Array<Partial<PipesInterface>> = [];
 
 	constructor(private readonly _drawerService: DrawerService) {}
+
+	get displayFn() {
+		return this.autocompleteOptions.length > 0 ? true : false;
+	}
 
 	public toggleDrawer() {
 		if (this._drawerService.isDrawerOpen) {
@@ -26,13 +30,52 @@ export class HeaderComponent implements AfterViewInit {
 		}
 	}
 
+	private search(searchText: string): void {
+		this.autocompleteOptions = [];
+		const searchResults: Array<Pick<PipesInterface, 'pipeId' | 'pipeName'>> = [];
+		if (!searchText) {
+			return;
+		}
+		this.mockedPipes.forEach((theme) => {
+			theme.pipes.forEach((pipe) => {
+				const pipeNameLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeName));
+				const pipeDescriptionLowerCase = this.textToLowerCase(
+					this.removeSpecialCharactersFromText(pipe.pipeDescription)
+				);
+				const pipeUtilitiesLowerCase = this.textToLowerCase(
+					this.removeSpecialCharactersFromText(pipe.pipeUtilities.toString())
+				);
+				const pipeLinksLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeLinks));
+				const pipeVideosLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeVideos));
+				const themeGroupLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(theme.group));
+				const themeDescriptionLowerCase = this.textToLowerCase(
+					this.removeSpecialCharactersFromText(theme.description)
+				);
+				if (
+					pipeNameLowerCase.includes(searchText) ||
+					pipeDescriptionLowerCase.includes(searchText) ||
+					pipeUtilitiesLowerCase.includes(searchText) ||
+					pipeLinksLowerCase.includes(searchText) ||
+					pipeVideosLowerCase.includes(searchText) ||
+					themeGroupLowerCase.includes(searchText) ||
+					themeDescriptionLowerCase.includes(searchText)
+				) {
+					searchResults.push({ pipeId: pipe.pipeId, pipeName: pipe.pipeName });
+				}
+			});
+		});
+		if (searchResults.length > 0) {
+			this.autocompleteOptions = searchResults;
+		}
+	}
+
 	private observableSearch(): Observable<string> {
 		return fromEvent<KeyboardEvent>(this.inputSearch.nativeElement as HTMLElement, 'keyup').pipe(
 			map((event: KeyboardEvent) => (event.target as HTMLInputElement).value),
 			map((text) => this.removeSpecialCharactersFromText(text)),
 			map((text) => this.textToLowerCase(text)),
-			debounceTime(1000),
-			distinctUntilChanged()
+			distinctUntilChanged(),
+			debounceTime(500)
 		);
 	}
 
@@ -46,12 +89,10 @@ export class HeaderComponent implements AfterViewInit {
 	private textToLowerCase(text: string): string {
 		return text.toLowerCase();
 	}
-	// find inside this.mockedPipes if text match with any description, group or inside the pipe array
-	// for description, links, name, video or inside the utilities array
-	// if match, add object to a new array
+
 	ngAfterViewInit(): void {
 		this.observableSearch().subscribe((text: string) => {
-			console.log(text);
+			this.search(text);
 		});
 	}
 }

@@ -7,8 +7,8 @@
 		<input matInput [matAutocomplete]="auto" #inputSearch aria-label="Pesquisar..." />
 		<mat-icon matSuffix>search</mat-icon>
 		<mat-autocomplete #auto="matAutocomplete">
-			<mat-option *ngFor="let option of options" [value]="option">
-				{{ option }}
+			<mat-option *ngFor="let option of autocompleteOptions" [value]="option">
+				<a [routerLink]="['/pipes', option.pipeId]">{{ option.pipeName }} </a>
 			</mat-option>
 		</mat-autocomplete>
 	</mat-form-field>
