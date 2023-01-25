@@ -15,12 +15,10 @@ export class PipesComponent implements OnInit {
 	constructor(private readonly _route: ActivatedRoute) {}
 
 	ngOnInit(): void {
-		this.pipeFound = this.getPipeById(this.getIdFromRoute());
-		console.log('objeto encontrado', this.pipeFound);
-	}
-
-	private getIdFromRoute(): string {
-		return this._route.snapshot.paramMap.get('id') as string;
+		this._route.paramMap.subscribe((params) => {
+			this.getPipeById(params.get('id') as string);
+			console.log('objeto encontrado', this.pipeFound);
+		});
 	}
 
 	private getPipeById(id: string): Array<PipesInterface> {
