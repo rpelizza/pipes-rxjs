@@ -9,14 +9,6 @@ p {
 	color: #5c5c5c;
 	font-size: 100%;
 	line-height: 30px;
-	&::before {
-		content: '•';
-		color: #ff5722;
-		font-size: 150%;
-		display: inline-block;
-		margin-left: -1em;
-		margin-right: 0.5em;
-	}
 }
 
 img {
