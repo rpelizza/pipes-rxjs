@@ -10,4 +10,8 @@ import { mockPipes } from 'src/app/shared/mock/pipes.mock';
 })
 export class NavbarComponent {
 	public pipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
+
+	public goToHome() {
+		window.location.href = '/';
+	}
 }
