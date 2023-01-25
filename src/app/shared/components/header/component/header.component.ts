@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DrawerService } from 'src/app/shared/services/drawer/drawer.service';
 import { mockPipes } from 'src/app/shared/mock/pipes.mock';
 import { PipesInterface, RxjsInterface } from 'src/app/shared/interfaces/rxjs.interface';
+import { Router } from '@angular/router';
 @Component({
 	selector: 'app-header',
 	templateUrl: './header.component.html',
@@ -11,8 +12,11 @@ import { PipesInterface, RxjsInterface } from 'src/app/shared/interfaces/rxjs.in
 export class HeaderComponent {
 	private mockedPipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
 	public autocompleteOptions: Array<Partial<PipesInterface>> = [];
+	public pipesSortedByName: Array<Pick<PipesInterface, 'pipeId' | 'pipeName'>> = this.sortPipesByName(
+		this.extractPipeIdAndPipeName(this.mockedPipes)
+	);
 
-	constructor(private readonly _drawerService: DrawerService) {}
+	constructor(private readonly _drawerService: DrawerService, private readonly _router: Router) {}
 
 	private removeSpecialCharactersFromText(text: string): string {
 		return text
@@ -25,12 +29,31 @@ export class HeaderComponent {
 		return text.toLowerCase();
 	}
 
+	private extractPipeIdAndPipeName(rxjsList: Array<RxjsInterface>) {
+		const filteredPipes = Array<Pick<PipesInterface, 'pipeId' | 'pipeName'>>();
+		rxjsList.forEach((theme) => {
+			theme.pipes.forEach((pipe) => {
+				filteredPipes.push({ pipeId: pipe.pipeId, pipeName: pipe.pipeName });
+			});
+		});
+
+		return filteredPipes;
+	}
+
+	private sortPipesByName(pipes: Array<Pick<PipesInterface, 'pipeId' | 'pipeName'>>) {
+		return pipes.sort((a, b) => a.pipeName.localeCompare(b.pipeName));
+	}
+
 	public toggleDrawer() {
 		if (this._drawerService.isDrawerOpen) {
 			this._drawerService.close();
 		} else {
 			this._drawerService.open();
 		}
+	}
+
+	public redirectToPipePage(pipeId: number) {
+		this._router.navigate([`/pipes/${pipeId}`]);
 	}
 
 	public search($event: KeyboardEvent): void {

@@ -7,16 +7,17 @@
 		<input matInput [matAutocomplete]="auto" (keyup)="search($event)" aria-label="Pesquisar..." />
 		<mat-icon matSuffix>search</mat-icon>
 		<mat-autocomplete #auto="matAutocomplete">
-			<mat-option *ngFor="let option of autocompleteOptions">
-				<a [routerLink]="['/pipes', option.pipeId]">{{ option.pipeName }} </a>
+			<mat-option *ngFor="let option of autocompleteOptions" [value]="option">
+				<a [routerLink]="['/pipes/', option.pipeId]">{{ option.pipeName }} </a>
 			</mat-option>
 		</mat-autocomplete>
 	</mat-form-field>
 	<div>
 		<button mat-button class="button-pipes" [matMenuTriggerFor]="menu">Pipes</button>
 		<mat-menu #menu="matMenu">
-			<button mat-menu-item>Item 1</button>
-			<button mat-menu-item>Item 2</button>
+			<button mat-menu-item *ngFor="let pipe of pipesSortedByName" (click)="redirectToPipePage(pipe.pipeId)">
+				{{ pipe.pipeName }}
+			</button>
 		</mat-menu>
 	</div>
 </mat-toolbar>
