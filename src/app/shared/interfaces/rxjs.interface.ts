@@ -10,6 +10,8 @@ export interface PipesInterface {
 	pipeName: string;
 	pipeDescription: string;
 	pipeUtilities: Array<string>;
+	pipeTips: Array<string>;
+	pipeObservation: Array<string>;
 	pipeLinks: string;
 	pipeVideos: string;
 }
