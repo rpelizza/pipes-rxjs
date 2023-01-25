@@ -16,11 +16,8 @@
 		</mat-autocomplete>
 	</mat-form-field>
 	<div>
-		<button mat-button class="button-pipes" [matMenuTriggerFor]="menu">Pipes</button>
-		<mat-menu #menu="matMenu">
-			<button mat-menu-item *ngFor="let pipe of pipesSortedByName" (click)="redirectToPipePage(pipe.pipeId)">
-				{{ pipe.pipeName }}
-			</button>
-		</mat-menu>
+		<button mat-icon-button aria-label="Voltar para home" (click)="redirectToPipePage(0)">
+			<mat-icon>home</mat-icon>
+		</button>
 	</div>
 </mat-toolbar>

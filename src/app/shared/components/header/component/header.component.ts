@@ -14,9 +14,6 @@ export class HeaderComponent {
 
 	private mockedPipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
 	public autoCompleteOptions: Array<Partial<PipesInterface>> = [];
-	public pipesSortedByName: Array<Pick<PipesInterface, 'pipeId' | 'pipeName'>> = this.sortPipesByName(
-		this.extractPipeIdAndPipeName(this.mockedPipes)
-	);
 
 	constructor(private readonly _drawerService: DrawerService, private readonly _router: Router) {}
 
@@ -31,21 +28,6 @@ export class HeaderComponent {
 		return text.toLowerCase();
 	}
 
-	private extractPipeIdAndPipeName(rxjsList: Array<RxjsInterface>) {
-		const filteredPipes = Array<Pick<PipesInterface, 'pipeId' | 'pipeName'>>();
-		rxjsList.forEach((theme) => {
-			theme.pipes.forEach((pipe) => {
-				filteredPipes.push({ pipeId: pipe.pipeId, pipeName: pipe.pipeName });
-			});
-		});
-
-		return filteredPipes;
-	}
-
-	private sortPipesByName(pipes: Array<Pick<PipesInterface, 'pipeId' | 'pipeName'>>) {
-		return pipes.sort((a, b) => a.pipeName.localeCompare(b.pipeName));
-	}
-
 	public toggleDrawer() {
 		if (this._drawerService.isDrawerOpen) {
 			this._drawerService.close();
@@ -56,7 +38,7 @@ export class HeaderComponent {
 
 	public redirectToPipePage(pipeId: number) {
 		if (pipeId === 0) {
-			this._router.navigate(['/error']);
+			this._router.navigate(['/home']);
 		} else {
 			this._router.navigate([`/pipes/${pipeId}`]);
 		}
