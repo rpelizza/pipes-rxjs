@@ -9,15 +9,13 @@ input {
 }
 
 mat-option {
-	a {
-		font-size: 16px;
-		font-family: 'Raleway', sans-serif !important;
-		text-decoration: none;
-		display: block;
-		text-align: center;
-		color: #2e353a;
-		&:hover {
-			font-weight: 500;
-		}
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif !important;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	color: #2e353a;
+	&:hover {
+		font-weight: 500;
 	}
 }
