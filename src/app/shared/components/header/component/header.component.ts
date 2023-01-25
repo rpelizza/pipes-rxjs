@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild, ElementRef } from '@angular/core';
 import { DrawerService } from 'src/app/shared/services/drawer/drawer.service';
 import { mockPipes } from 'src/app/shared/mock/pipes.mock';
 import { PipesInterface, RxjsInterface } from 'src/app/shared/interfaces/rxjs.interface';
@@ -10,8 +10,10 @@ import { Router } from '@angular/router';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
+	@ViewChild('inputRef', { static: false }) inputRef!: ElementRef<HTMLInputElement>;
+
 	private mockedPipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
-	public autocompleteOptions: Array<Partial<PipesInterface>> = [];
+	public autoCompleteOptions: Array<Partial<PipesInterface>> = [];
 	public pipesSortedByName: Array<Pick<PipesInterface, 'pipeId' | 'pipeName'>> = this.sortPipesByName(
 		this.extractPipeIdAndPipeName(this.mockedPipes)
 	);
@@ -53,12 +55,19 @@ export class HeaderComponent {
 	}
 
 	public redirectToPipePage(pipeId: number) {
-		this._router.navigate([`/pipes/${pipeId}`]);
+		if (pipeId === 0) {
+			this._router.navigate(['/error']);
+		} else {
+			this._router.navigate([`/pipes/${pipeId}`]);
+		}
+
+		this.autoCompleteOptions = [];
+		this.inputRef.nativeElement.value = '';
 	}
 
 	public search($event: KeyboardEvent): void {
 		const searchText = ($event.target as HTMLInputElement).value;
-		this.autocompleteOptions = [];
+		this.autoCompleteOptions = [];
 		const searchResults: Array<Pick<PipesInterface, 'pipeId' | 'pipeName'>> = [];
 		if (!searchText) {
 			return;
@@ -100,7 +109,7 @@ export class HeaderComponent {
 			});
 		});
 		if (searchResults.length > 0) {
-			this.autocompleteOptions = searchResults;
+			this.autoCompleteOptions = searchResults;
 		}
 	}
 }
