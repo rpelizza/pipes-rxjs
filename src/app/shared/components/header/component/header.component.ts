@@ -36,8 +36,8 @@ export class HeaderComponent {
 		}
 	}
 
-	public redirectToPipePage(pipeId: number) {
-		if (pipeId === 0) {
+	public redirectToPipePage(pipeId: string) {
+		if (pipeId === '') {
 			this._router.navigate(['/home']);
 		} else {
 			this._router.navigate([`/pipes/${pipeId}`]);

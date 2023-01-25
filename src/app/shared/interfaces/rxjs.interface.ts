@@ -6,7 +6,7 @@ export interface RxjsInterface {
 }
 
 export interface PipesInterface {
-	pipeId: number;
+	pipeId: string;
 	pipeName: string;
 	pipeDescription: string;
 	pipeUtilities: Array<string>;

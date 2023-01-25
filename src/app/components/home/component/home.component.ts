@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'app-home',
@@ -6,5 +6,19 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 	styleUrls: ['./home.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit {
+	ngOnInit(): void {
+		console.log('ID: ', this.randomId());
+	}
 
+	randomId() {
+		let id = '';
+		const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+		for (let i = 0; i < 100; i++) {
+			id += possible.charAt(Math.floor(Math.random() * possible.length));
+		}
+
+		return id;
+	}
+}

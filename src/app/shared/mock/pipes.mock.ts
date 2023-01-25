@@ -6,7 +6,7 @@ export const mockPipes = [
 			'As pipes de combinação (combination) do RxJS são operações que combinam várias fontes de dados em uma única saída',
 		pipes: [
 			{
-				pipeId: 1,
+				pipeId: '4EZNSSzT65RZ7pH8vyOuTnTsvJuUH9NuBF9zgTVCyiwJ98o4yaV8wpbuqQvSldZ2dM1ATwmDTH65q13Uivq9x4I1WVjQUjFVWnHS',
 				pipeName: 'combineAll',
 				pipeDescription:
 					'A função combineAll do RxJS é usada para combinar todas as emissões de vários observáveis ​​em um único observável. Ele é semelhante à função mergeAll, mas ao invés de emitir os valores de todos os observáveis ​​em paralelo, ele aguarda até que todos os observáveis ​​emitam pelo menos um valor antes de combinar todas as emissões em uma matriz.',
@@ -30,7 +30,7 @@ export const mockPipes = [
 				pipeVideos: 'https://youtu.be/nwNrhW-rOKM',
 			},
 			{
-				pipeId: 2,
+				pipeId: 'pbYpcmWMdN6zkXIaD1RT4gaLYedkETLLcwTJFPcHO15feoSLXyC7tkbcDESV5nHGf8iOXulCJ0VDik9IgAFZnYRrK4RfBvt6HGmo',
 				pipeName: 'combineLatest',
 				pipeDescription:
 					'O operator combineLatest do RxJS é usado para combinar o último valor emitido de várias fontes de observáveis ​​e emitir esses valores combinados como uma matriz. Ele é semelhante ao operator zip, mas ao invés de esperar por todas as fontes de observáveis ​​para emitir um valor antes de combiná-los, o combineLatest combina os últimos valores emitidos de cada fonte de observáveis. Além disso, o combineLatest pode ser usado com mais de dois observáveis, e o número de observáveis ​​é ilimitado, e cada valor emitido será combinado com os valores emitidos pelos outros observáveis ​​e emitido como uma matriz. É importante mencionar que o combineLatest só emite valores depois que todos os observáveis ​​emitiram pelo menos um valor, e ele só emite novamente quando pelo menos um dos observáveis ​​emitir um novo valor.',

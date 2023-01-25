@@ -10,13 +10,13 @@
 			<mat-option
 				*ngFor="let option of autoCompleteOptions"
 				[value]="option"
-				(click)="redirectToPipePage(option.pipeId || 0)"
+				(click)="redirectToPipePage(option.pipeId || '')"
 				>{{ option.pipeName }}
 			</mat-option>
 		</mat-autocomplete>
 	</mat-form-field>
 	<div>
-		<button mat-icon-button aria-label="Voltar para home" (click)="redirectToPipePage(0)">
+		<button mat-icon-button aria-label="Voltar para home" (click)="redirectToPipePage('')">
 			<mat-icon>home</mat-icon>
 		</button>
 	</div>
