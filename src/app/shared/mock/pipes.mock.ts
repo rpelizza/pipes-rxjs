@@ -27,7 +27,7 @@ export const mockPipes = [
 					'No entanto, é importante notar que o combineAll pode não ser a melhor opção em todas as situações, pois existem outros operadores semelhantes como o mergeAll e concatAll que podem ser usados ​​em diferentes situações. Portanto, é importante avaliar seu caso de uso específico e comparar os operadores disponíveis para determinar qual é a melhor opção para sua aplicação.',
 				],
 				pipeLinks: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/combineall',
-				pipeVideo: 'https://www.youtube.com/watch?v=5ZUZFyxgktE&ab_channel=TeamJupeter',
+				pipeVideo: 'https://youtu.be/5ZUZFyxgktE',
 			},
 			{
 				pipeId: 'pbYpcmWMdN6zkXIaD1RT4gaLYedkETLLcwTJFPcHO15feoSLXyC7tkbcDESV5nHGf8iOXulCJ0VDik9IgAFZnYRrK4RfBvt6HGmo',
