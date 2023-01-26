@@ -1,27 +1,43 @@
-<div class="row">
-	<div class="col-12">
-		<h1>teste</h1>
+<section *ngFor="let item of pipeFound">
+	<div class="row">
+		<div class="col-12">
+			<ul class="breadcrumbs">
+				<li>
+					<button mat-raised-button extended color="primary" [routerLink]="'/home'">
+						<mat-icon>home</mat-icon>Home
+					</button>
+				</li>
+				<li>
+					<button mat-raised-button extended [routerLink]="'/home'">
+						<mat-icon>merge</mat-icon>{{ item.group }}
+					</button>
+				</li>
+				<li>
+					<button mat-raised-button extended disabled><mat-icon>done</mat-icon>{{ item.pipeName }}</button>
+				</li>
+			</ul>
+		</div>
 	</div>
-</div>
 
-<div class="row">
-	<div class="col-12">
-		<mat-tab-group>
-			<mat-tab label="Explicação"
-				><mat-card>
-					<mat-card-content>Explicação aqui</mat-card-content>
-				</mat-card>
-			</mat-tab>
-			<mat-tab label="Vídeo">
-				<mat-card>
-					<mat-card-content>Vídeo aqui</mat-card-content>
-				</mat-card>
-			</mat-tab>
-			<mat-tab label="Código">
-				<mat-card>
-					<mat-card-content>Código aqui</mat-card-content>
-				</mat-card>
-			</mat-tab>
-		</mat-tab-group>
+	<div class="row">
+		<div class="col-12">
+			<mat-tab-group>
+				<mat-tab label="Explicação"
+					><mat-card>
+						<mat-card-content>Explicação aqui</mat-card-content>
+					</mat-card>
+				</mat-tab>
+				<mat-tab label="Vídeo">
+					<mat-card>
+						<mat-card-content>Vídeo aqui</mat-card-content>
+					</mat-card>
+				</mat-tab>
+				<mat-tab label="Código">
+					<mat-card>
+						<mat-card-content>Código aqui</mat-card-content>
+					</mat-card>
+				</mat-tab>
+			</mat-tab-group>
+		</div>
 	</div>
-</div>
+</section>

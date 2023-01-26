@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PipesInterface, RxjsInterface } from 'src/app/shared/interfaces/rxjs.interface';
 import { mockPipes } from 'src/app/shared/mock/pipes.mock';
+import { PipeFoundInterface } from '../interfaces/pipe-found.interface';
 
 @Component({
 	selector: 'app-pipes',
@@ -10,7 +11,7 @@ import { mockPipes } from 'src/app/shared/mock/pipes.mock';
 })
 export class PipesComponent implements OnInit {
 	private mockedPipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
-	public pipeFound: Array<PipesInterface> = [];
+	public pipeFound: Array<PipeFoundInterface> = [];
 
 	constructor(private readonly _route: ActivatedRoute) {}
 
