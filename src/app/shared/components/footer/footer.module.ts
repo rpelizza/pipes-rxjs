@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FooterComponent } from './component/footer.component';
-import { MatChipsModule } from '@angular/material/chips';
+import { MatLegacyChipsModule as MatChipsModule } from '@angular/material/legacy-chips';
 import { SharedModule } from '../../shared.module';
 
 @NgModule({
