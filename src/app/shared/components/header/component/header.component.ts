@@ -70,7 +70,7 @@ export class HeaderComponent {
 					this.removeSpecialCharactersFromText(pipe.pipeObservation.toString())
 				);
 				const pipeLinksLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeLinks));
-				const pipeVideosLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeVideos));
+				const pipeVideoLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeVideo));
 				const themeGroupLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(theme.group));
 				const themeDescriptionLowerCase = this.textToLowerCase(
 					this.removeSpecialCharactersFromText(theme.description)
@@ -82,7 +82,7 @@ export class HeaderComponent {
 					pipeObservationToLowerCase.includes(searchText) ||
 					pipeUtilitiesLowerCase.includes(searchText) ||
 					pipeLinksLowerCase.includes(searchText) ||
-					pipeVideosLowerCase.includes(searchText) ||
+					pipeVideoLowerCase.includes(searchText) ||
 					themeGroupLowerCase.includes(searchText) ||
 					themeDescriptionLowerCase.includes(searchText)
 				) {

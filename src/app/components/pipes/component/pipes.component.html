@@ -35,13 +35,38 @@
 								<div class="col-12">
 									<mat-divider></mat-divider>
 								</div>
+								<div class="col-12">
+									<h2>Utilidades</h2>
+									<ul class="utilitiesAndTips">
+										<li *ngFor="let util of item.pipeUtilities">
+											<mat-icon>star</mat-icon><span>{{ util }}</span>
+										</li>
+									</ul>
+								</div>
+								<div class="col-12">
+									<mat-divider></mat-divider>
+								</div>
+								<div class="col-12">
+									<h2>Dicas</h2>
+									<ul class="utilitiesAndTips">
+										<li *ngFor="let tip of item.pipeTips">
+											<mat-icon>psychology_alt</mat-icon><span>{{ tip }}</span>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</mat-card-content>
 					</mat-card>
 				</mat-tab>
 				<mat-tab label="Vídeo">
 					<mat-card>
-						<mat-card-content>Vídeo aqui</mat-card-content>
+						<mat-card-content>
+							<div class="row">
+								<div class="col-12">
+									<!-- <iframe [src]="item.pipeVideo | safe" width="560" height="315"></iframe> -->
+								</div>
+							</div>
+						</mat-card-content>
 					</mat-card>
 				</mat-tab>
 				<mat-tab label="Exemplo (Código)">

@@ -13,5 +13,5 @@ export interface PipesInterface {
 	pipeTips: Array<string>;
 	pipeObservation: Array<string>;
 	pipeLinks: string;
-	pipeVideos: string;
+	pipeVideo: string;
 }
