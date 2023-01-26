@@ -40,6 +40,14 @@ p {
 	font-size: 15px;
 	line-height: 25px;
 	color: #282626;
+	font-weight: 500;
+	&.warning {
+		color: #f44336;
+		background-color: #f443360f;
+		font-size: 14px;
+		padding: 5px;
+		font-weight: 400;
+	}
 }
 
 a {

@@ -27,7 +27,10 @@
 								<div class="col-12">
 									<h1>{{ item.pipeName }}</h1>
 									<p>{{ item.pipeDescription }}</p>
-									<a href="{{ item.pipeLinks }}">Documentação oficial - {{ item.pipeName }}</a>
+									<p class="warning" *ngFor="let warning of item.pipeObservation">{{ warning }}</p>
+									<a href="{{ item.pipeLinks }}" target="_blank"
+										>Documentação oficial - {{ item.pipeName }}</a
+									>
 								</div>
 								<div class="col-12">
 									<mat-divider></mat-divider>
