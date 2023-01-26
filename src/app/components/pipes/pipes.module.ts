@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
 	declarations: [PipesComponent],
@@ -22,6 +23,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 		MatIconModule,
 		MatDividerModule,
 		MatTooltipModule,
+		YouTubePlayerModule,
 	],
 })
 export class PipesModule {}
