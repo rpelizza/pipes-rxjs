@@ -22,7 +22,17 @@
 			<mat-tab-group>
 				<mat-tab label="Explicação"
 					><mat-card>
-						<mat-card-content>Explicação aqui</mat-card-content>
+						<mat-card-content>
+							<div class="row">
+								<div class="col-12">
+									<h1>{{ item.pipeName }}</h1>
+									<p>{{ item.pipeDescription }}</p>
+								</div>
+								<div class="col-12">
+									<mat-divider></mat-divider>
+								</div>
+							</div>
+						</mat-card-content>
 					</mat-card>
 				</mat-tab>
 				<mat-tab label="Vídeo">
@@ -30,7 +40,7 @@
 						<mat-card-content>Vídeo aqui</mat-card-content>
 					</mat-card>
 				</mat-tab>
-				<mat-tab label="Código">
+				<mat-tab label="Exemplo (Código)">
 					<mat-card>
 						<mat-card-content>Código aqui</mat-card-content>
 					</mat-card>
