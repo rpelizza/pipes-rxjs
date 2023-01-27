@@ -2,8 +2,12 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px;
-	background-color: #cdcdcd;
+	padding: 5px;
+	background-color: #f5f5f5;
+	color: #5a5a5a;
+	border-top: 1px solid #ededed;
+	font-size: 14px;
+	font-weight: 400;
 }
 mat-icon {
 	border-radius: 50%;
@@ -11,34 +15,19 @@ mat-icon {
 	height: 30px;
 }
 
-.chip-list {
+mat-chip-listbox {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 
 	mat-chip {
-		&:hover {
-			cursor: pointer;
-			box-shadow: 1px 1px 1px #00000014;
-		}
 		margin: 0 5px;
 		border-radius: 5px;
-		padding: 5px 10px;
-		border: 1px solid #c3c3c3;
-		a {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			text-decoration: none;
-			font-weight: 500;
-			color: #404040;
-			img {
-				width: 30px;
-				height: 30px;
-				border-radius: 50%;
-				margin-right: 5px;
-			}
+		border: 1px solid #e9e9e9;
+		background-color: #fff;
+		&:hover {
+			cursor: pointer !important;
 		}
 	}
 }

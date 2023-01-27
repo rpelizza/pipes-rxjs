@@ -1,32 +1,24 @@
 <footer>
 	<div>Pipes RXJS</div>
 	<div>
-		<div class="chip-list">
-			<mat-chip>
-				<a href="https://www.linkedin.com/in/rafael-pelizza-276651160/" target="_blank">
-					<img matChipAvatar src="assets\linkedin.png" alt="LinkedIn" />
-					LinkedIn
-				</a>
+		<mat-chip-listbox>
+			<mat-chip (click)="redirectToExternalUrl('https://www.linkedin.com/in/rafael-pelizza-276651160/')">
+				<img matChipAvatar src="assets\linkedin.png" alt="LinkedIn" />
+				LinkedIn
 			</mat-chip>
-			<mat-chip>
-				<a href="https://www.instagram.com/rafaelpelizza_/" target="_blank">
-					<img matChipAvatar src="assets\instagram.png" alt="Instagram" />
-					Instagram
-				</a>
+			<mat-chip (click)="redirectToExternalUrl('https://www.instagram.com/rafaelpelizza_/')">
+				<img matChipAvatar src="assets\instagram.png" alt="Instagram" />
+				Instagram
 			</mat-chip>
-			<mat-chip>
-				<a href="https://github.com/rpelizza" target="_blank">
-					<img matChipAvatar src="assets\github.png" alt="Github" />
-					Github
-				</a>
+			<mat-chip (click)="redirectToExternalUrl('https://github.com/rpelizza')">
+				<img matChipAvatar src="assets\github.png" alt="Github" />
+				Github
 			</mat-chip>
-			<mat-chip>
-				<a href="mailto:rafael.pelizza@gmail.com">
-					<img matChipAvatar src="assets\gmail.png" alt="E-mail" />
-					E-mail
-				</a>
+			<mat-chip (click)="redirectToExternalUrl('rafael.pelizza@gmail.com', true)">
+				<img matChipAvatar src="assets\gmail.png" alt="E-mail" />
+				E-mail
 			</mat-chip>
-		</div>
+		</mat-chip-listbox>
 	</div>
 	<div>@2022</div>
 </footer>
