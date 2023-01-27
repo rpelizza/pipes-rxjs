@@ -69,24 +69,20 @@ export class HeaderComponent {
 				const pipeObservationToLowerCase = this.textToLowerCase(
 					this.removeSpecialCharactersFromText(pipe.pipeObservation.toString())
 				);
-				const pipeLinksLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeLink));
 				const pipeVideoLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeVideo));
-				const themeGroupLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(theme.group));
-				const themeDescriptionLowerCase = this.textToLowerCase(
-					this.removeSpecialCharactersFromText(theme.description)
-				);
+				const searchTextLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(searchText));
 				if (
-					pipeNameLowerCase.includes(searchText) ||
-					pipeDescriptionLowerCase.includes(searchText) ||
-					pipeTipsLowerCase.includes(searchText) ||
-					pipeObservationToLowerCase.includes(searchText) ||
-					pipeUtilitiesLowerCase.includes(searchText) ||
-					pipeLinksLowerCase.includes(searchText) ||
-					pipeVideoLowerCase.includes(searchText) ||
-					themeGroupLowerCase.includes(searchText) ||
-					themeDescriptionLowerCase.includes(searchText)
+					pipeNameLowerCase.includes(searchTextLowerCase) ||
+					pipeDescriptionLowerCase.includes(searchTextLowerCase) ||
+					pipeUtilitiesLowerCase.includes(searchTextLowerCase) ||
+					pipeTipsLowerCase.includes(searchTextLowerCase) ||
+					pipeObservationToLowerCase.includes(searchTextLowerCase) ||
+					pipeVideoLowerCase.includes(searchTextLowerCase)
 				) {
-					searchResults.push({ pipeId: pipe.pipeId, pipeName: pipe.pipeName });
+					searchResults.push({
+						pipeId: pipe.pipeId,
+						pipeName: pipe.pipeName,
+					});
 				}
 			});
 		});

@@ -45,26 +45,12 @@ h3 {
 p {
 	line-height: 25px;
 	&.warning {
+		text-align: center;
 		color: #f44336;
 		background-color: rgba(244, 67, 54, 0.0588235294);
 		font-size: 12px;
 		padding: 5px;
 		font-weight: 500;
-	}
-}
-
-a {
-	color: #3f51b5;
-	font-weight: 400;
-	display: table;
-	text-align: center;
-	padding: 10px;
-	margin: 0 auto;
-	margin-bottom: 10px;
-	&:hover {
-		background-color: #3f51b5;
-		color: #fff;
-		border-radius: 5px;
 	}
 }
 
@@ -82,10 +68,16 @@ ul.utilitiesAndTips {
 			margin-right: 15px;
 			width: 40px;
 		}
+		a {
+			color: #233d4a;
+			font-weight: 400;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
-
-// crie uma classe css para o componente div
 
 .player {
 	width: calc(100vw - 350px);

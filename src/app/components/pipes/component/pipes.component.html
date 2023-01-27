@@ -28,9 +28,14 @@
 									<h1>{{ item.pipeName }}</h1>
 									<p>{{ item.pipeDescription }}</p>
 									<p class="warning">{{ item.pipeObservation }}</p>
-									<a href="{{ item.pipeLink }}" target="_blank"
-										>Documentação oficial - {{ item.pipeName }}</a
-									>
+									<!-- <div class="links">
+										<a
+											*ngFor="let link of item.pipeLinks"
+											href="{{ link.pipeSiteURL }}"
+											target="_blank">
+											{{ link.pipeSiteName }}</a
+										>
+									</div> -->
 								</div>
 								<div class="col-12">
 									<mat-divider></mat-divider>
@@ -51,6 +56,22 @@
 									<ul class="utilitiesAndTips">
 										<li *ngFor="let tip of item.pipeTips">
 											<mat-icon>psychology_alt</mat-icon><span>{{ tip }}</span>
+										</li>
+									</ul>
+								</div>
+								<div class="col-12">
+									<mat-divider></mat-divider>
+								</div>
+								<div class="col-12">
+									<h3>Links úteis</h3>
+									<ul class="utilitiesAndTips">
+										<li *ngFor="let link of item.pipeLinks">
+											<mat-icon>link</mat-icon
+											><span
+												><a href="{{ link.pipeSiteURL }}" target="_blank">
+													{{ link.pipeSiteName }}</a
+												></span
+											>
 										</li>
 									</ul>
 								</div>

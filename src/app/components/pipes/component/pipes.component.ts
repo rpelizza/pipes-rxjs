@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { PipeFoundInterface, PipesInterface, RxjsInterface } from 'src/app/shared/interfaces/rxjs.interface';
+import { PipeFoundInterface, RxjsInterface } from 'src/app/shared/interfaces/rxjs.interface';
 import { mockPipes } from 'src/app/shared/mock/pipes.mock';
 
 @Component({
@@ -19,6 +19,8 @@ export class PipesComponent implements OnInit {
 		this._route.paramMap.subscribe((params) => {
 			this.getPipeById(params.get('id') as string);
 			this.createVideoComponent();
+
+			console.log(this.pipeFound);
 		});
 	}
 
@@ -28,7 +30,7 @@ export class PipesComponent implements OnInit {
 		document.body.appendChild(tag);
 	}
 
-	private getPipeById(id: string): Array<PipesInterface> {
+	private getPipeById(id: string): Array<PipeFoundInterface> {
 		this.pipeFound = [];
 		this.mockedPipes.forEach((theme) => {
 			theme.pipes.forEach((pipe) => {

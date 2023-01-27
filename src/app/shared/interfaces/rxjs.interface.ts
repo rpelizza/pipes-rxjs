@@ -9,11 +9,16 @@ export interface PipesInterface {
 	pipeId: string;
 	pipeName: string;
 	pipeDescription: string;
+	pipeObservation: string;
 	pipeUtilities: Array<string>;
 	pipeTips: Array<string>;
-	pipeObservation: string;
-	pipeLink: string;
+	pipeLinks: Array<PipeLinksInterface>;
 	pipeVideo: string;
+}
+
+export interface PipeLinksInterface {
+	pipeSiteName: string;
+	pipeSiteURL: string;
 }
 
 export interface PipeFoundInterface {
@@ -26,6 +31,6 @@ export interface PipeFoundInterface {
 	pipeUtilities: Array<string>;
 	pipeTips: Array<string>;
 	pipeObservation: string;
-	pipeLink: string;
+	pipeLinks: Array<PipeLinksInterface>;
 	pipeVideo: string;
 }
