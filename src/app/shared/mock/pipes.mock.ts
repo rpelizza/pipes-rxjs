@@ -40,6 +40,38 @@ export const mockPipes = [
 				],
 				pipeVideo: '5ZUZFyxgktE',
 			},
+			{
+				pipeId: 'pipe_rxjs_combineLatest_20221231',
+				pipeName: 'combineLatest',
+				pipeDescription:
+					'A pipe combineLatest é utilizada para combinar o valor mais recente de múltiplos observáveis ​​em um único observable. Ele emite o valor mais recente de cada observable assim que qualquer um deles emite um novo valor, combinando esses valores em um array.',
+				pipeObservation:
+					'É importante notar que a pipe combineLatest só emite valores quando todos os observáveis ​​emitirem pelo menos um valor, portanto, é possível que ela não seja tão útil em situações onde alguns dos observáveis ​​nunca emitem valores.',
+				pipeUtilities: [
+					'Combinar vários observáveis ​​em um único observable.',
+					'Manipular dados de múltiplas fontes de uma só vez.',
+					'Sincronizar dados de múltiplos observáveis.',
+					'Combinar dados de diferentes fontes em uma única saída.',
+				],
+				pipeTips: [
+					'Lembre-se de que a pipe combineLatest só emite valores quando todos os observáveis ​​emitirem pelo menos um valor.',
+					'CombineLatest é uma operação síncrona, então ele não é recomendado para uso com fluxos de dados grandes.',
+					'É possível passar um valor de projeção para a pipe combineLatest para transformar os valores antes de serem emitidos.',
+					'Lembre-se de importar a pipe combineLatest do rxjs/operators',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/combinelatest',
+					},
+					{
+						pipeSiteName: 'RxJS - Docs',
+						pipeSiteURL: 'https://rxjs-dev.firebaseapp.com/api/index/function/combineLatest',
+					},
+					{ pipeSiteName: 'rxmarbles', pipeSiteURL: 'https://rxmarbles.com/#combineLatest' },
+				],
+				pipeVideo: 'aHMYE3cg9D4',
+			},
 		],
 	},
 	{
