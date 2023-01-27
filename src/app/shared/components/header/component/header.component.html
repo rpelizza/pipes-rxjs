@@ -3,8 +3,14 @@
 		<mat-icon>menu</mat-icon>
 	</button>
 	<mat-form-field appearance="fill">
-		<mat-label ngClass="label">Pesquisar</mat-label>
-		<input matInput [matAutocomplete]="auto" #inputRef (keyup)="search($event)" aria-label="Pesquisar..." />
+		<mat-label>Pesquisar</mat-label>
+		<input
+			type="text"
+			aria-label="Pesquisar...."
+			matInput
+			[matAutocomplete]="auto"
+			#inputRef
+			(keyup)="search($event)" />
 		<mat-icon matSuffix>search</mat-icon>
 		<mat-autocomplete #auto="matAutocomplete">
 			<mat-option
