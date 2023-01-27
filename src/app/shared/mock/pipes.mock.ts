@@ -139,6 +139,41 @@ export const mockPipes = [
 				],
 				pipeVideo: 'vJHbjf4MTWM',
 			},
+			{
+				pipeId: 'pipe-rxjs-endWith-0123456789',
+				pipeName: 'endWith',
+				pipeDescription:
+					'A pipe endWith é utilizada para emitir um valor ou valores adicionais após o fluxo de dados original ter sido completado. Isso é útil para adicionar um valor de finalização ou uma ação de limpeza após o fluxo de dados original.',
+				pipeObservation:
+					'A pipe endWith pode não ser tão útil em situações em que não é necessário emitir valores adicionais após o fluxo de dados original. Além disso, essa pipe pode causar problemas de performance em fluxos de dados muito grandes.',
+				pipeUtilities: [
+					'Adicionar um valor de finalização ao fluxo de dados original',
+					'Realizar ações de limpeza após o fluxo de dados original',
+					'Emular o comportamento de um observable completado',
+					'Adicionar valores adicionais a um fluxo de dados já finalizado',
+				],
+				pipeTips: [
+					'Utilize a pipe endWith com moderação para evitar problemas de performance',
+					'Lembre-se de que os valores emitidos pela pipe endWith são emitidos após o fluxo de dados original ter sido completado',
+					'Não confunda a pipe endWith com a pipe concat que concatena dois fluxos de dados',
+					'A pipe endWith pode ser utilizada com qualquer tipo de fluxo de dados, incluindo observables, promises e iteráveis',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/endwith',
+					},
+					{
+						pipeSiteName: 'RxJS na Prática',
+						pipeSiteURL: 'https://rxjs-na-pratica.netlify.app/operators/endwith',
+					},
+					{
+						pipeSiteName: 'RxJS: Entendendo o Básico',
+						pipeSiteURL: 'https://rxjs-entendendo-o-basico.netlify.app/operators/endwith',
+					},
+				],
+				pipeVideo: 'hoMNpEa9vRI',
+			},
 		],
 	},
 	{
