@@ -72,6 +72,73 @@ export const mockPipes = [
 				],
 				pipeVideo: 'aHMYE3cg9D4',
 			},
+			{
+				pipeId: 'pipe-rxjs-concat-1234abcd',
+				pipeName: 'concat',
+				pipeDescription:
+					'A pipe concat é utilizada para concatenar um ou mais observables em um único observable. Ela é útil quando é preciso juntar dois ou mais fluxos de dados, garantindo que a ordem de emissão seja mantida. A pipe concat só emite valores depois que o observable anterior completar.',
+				pipeObservation:
+					'A pipe concat pode não ser tão útil em casos em que é preciso que os observables sejam emitidos de forma paralela e não sequencial.',
+				pipeUtilities: [
+					'Concatenar múltiplos observables em um único observable',
+					'Manter a ordem de emissão dos observables',
+					'Esperar o observable anterior completar antes de emitir valores do próximo observable',
+					'Combinar fluxos de dados de diferentes fontes',
+				],
+				pipeTips: [
+					'É importante lembrar que a pipe concat só emite valores depois que o observable anterior completar.',
+					'Não use a pipe concat se você precisar que os observables sejam emitidos de forma paralela.',
+					'A pipe concat é útil para combinar fluxos de dados de diferentes fontes em uma única sequência.',
+					'Não esqueça de importar o concat de rxjs/operators antes de usá-lo.',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/concat',
+					},
+					{
+						pipeSiteName: 'RxJS - Concat',
+						pipeSiteURL: 'https://rxjs-dev.firebaseapp.com/api/operators/concat',
+					},
+					{
+						pipeSiteName: 'RxJS - Concatenando observables',
+						pipeSiteURL: 'https://medium.com/@luiz.vieira/rxjs-concatenando-observables-3e7a77a1f9d7',
+					},
+				],
+				pipeVideo: 'blKxEy6mAv4',
+			},
+			{
+				pipeId: 'pipeConcatAll_8qw7ertyuiopasdfghjklzxcvbnm',
+				pipeName: 'concatAll',
+				pipeDescription:
+					'A pipe concatAll é utilizada para concatenar todos os observáveis emitidos por um observable anterior e emitir esses valores como um único observable. Isso é útil quando deseja-se juntar vários observáveis em um só antes de continuar o processamento.',
+				pipeObservation:
+					'A pipe concatAll pode não ser tão útil em situações em que é necessário processar os observáveis de forma paralela, pois ela espera que cada observable anterior termine antes de emitir os próximos valores.',
+				pipeUtilities: [
+					'Concatenar vários observáveis em um só',
+					'Garantir ordem de emissão dos observáveis',
+					'Trabalhar com fluxos de dados dependentes',
+					'Juntar resultados de várias chamadas de API',
+				],
+				pipeTips: [
+					'Não utilize concatAll quando é necessário processar observáveis de forma paralela',
+					'Sempre verifique se o observable anterior realmente terminou antes de emitir os próximos valores',
+					'Lembre-se de que a pipe concatAll retorna um novo observable',
+					'Não confunda concatAll com o operador merge, que une vários observáveis em um só sem garantir ordem de emissão',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/concatall',
+					},
+					{
+						pipeSiteName: 'RxJS Docs',
+						pipeSiteURL: 'https://rxjs-dev.firebaseapp.com/api/index/function/concatAll',
+					},
+					{ pipeSiteName: 'RxMarbles', pipeSiteURL: 'https://rxmarbles.com/concatall' },
+				],
+				pipeVideo: 'vJHbjf4MTWM',
+			},
 		],
 	},
 	{
