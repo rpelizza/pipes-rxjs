@@ -19,8 +19,6 @@ export class PipesComponent implements OnInit {
 		this._route.paramMap.subscribe((params) => {
 			this.getPipeById(params.get('id') as string);
 			this.createVideoComponent();
-
-			console.log(this.pipeFound);
 		});
 	}
 
