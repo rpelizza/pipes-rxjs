@@ -62,8 +62,11 @@
 					<mat-card>
 						<mat-card-content>
 							<div class="row">
-								<div class="col-12">
-									<iframe [src]="item.pipeVideo" width="560" height="315"></iframe>
+								<div class="col-12 player">
+									<youtube-player
+										[videoId]="item.pipeVideo"
+										suggestedQuality="highres"
+										(error)="errorVideo()"></youtube-player>
 								</div>
 							</div>
 						</mat-card-content>
