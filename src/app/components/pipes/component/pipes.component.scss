@@ -35,22 +35,22 @@ h1 {
 }
 
 p {
-	font-size: 15px;
 	line-height: 25px;
 	&.warning {
 		color: #f44336;
-		background-color: #f443360f;
-		font-size: 14px;
+		background-color: rgba(244, 67, 54, 0.0588235294);
+		font-size: 12px;
 		padding: 5px;
+		font-weight: 500;
 	}
 }
 
 a {
-	color: #233d4a;
-	font-weight: 500;
+	color: #3f51b5;
+	font-weight: 400;
 	display: table;
 	text-align: center;
-	padding: 15px;
+	padding: 10px;
 	margin: 0 auto;
 	margin-bottom: 10px;
 	&:hover {
@@ -67,10 +67,12 @@ ul.utilitiesAndTips {
 		line-height: 25px;
 		flex-direction: row;
 		align-items: flex-start;
+		justify-content: start;
 		margin-bottom: 20px;
 		mat-icon {
-			color: #ffc107;
+			color: #ff9800;
 			margin-right: 15px;
+			width: 40px;
 		}
 	}
 }
