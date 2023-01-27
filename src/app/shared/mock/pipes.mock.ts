@@ -23,10 +23,10 @@ export const mockPipes = [
 					'Quando você precisa agrupar todas as emissões de um observável de observáveis ​​em uma única emissão.',
 					'Quando você precisa combinar todas as emissões de um observável de observáveis ​​em uma única emissão para poder trabalhar com elas de maneira eficiente.',
 				],
-				pipeObservation: [
+				pipeObservation:
 					'No entanto, é importante notar que o combineAll pode não ser a melhor opção em todas as situações, pois existem outros operadores semelhantes como o mergeAll e concatAll que podem ser usados ​​em diferentes situações. Portanto, é importante avaliar seu caso de uso específico e comparar os operadores disponíveis para determinar qual é a melhor opção para sua aplicação.',
-				],
-				pipeLinks: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/combineall',
+
+				pipeLink: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/combineall',
 				pipeVideo: '5ZUZFyxgktE',
 			},
 			{
@@ -47,11 +47,33 @@ export const mockPipes = [
 					'Quando você precisa combinar vários observáveis ​​para exibir informações em sua interface do usuário.',
 					'Quando você precisa combinar vários observáveis ​​para realizar uma ação ou para filtrar uma busca.',
 				],
-				pipeObservation: [
+				pipeObservation:
 					'No entanto, é importante notar que o combineLatest pode não ser a melhor opção em todas as situações, pois existem outros operadores semelhantes como o zip, merge e concat, que podem ser usados ​​em diferentes situações. Portanto, é importante avaliar seu caso de uso específico e comparar os operadores disponíveis para determinar qual é a melhor opção para sua aplicação.',
-				],
-				pipeLinks: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/combinelatest',
+				pipeLink: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/combinelatest',
 				pipeVideo: 'aHMYE3cg9D4',
+			},
+			{
+				pipeId: '7BFjk3ZQ435CRN7YTlSJiWWBRT57ifuCfQAE4t5GAP1GUKzimZ4jUTFVxjOSoBLfXY9dRSQlIJ7tDzDd7qKmKOk7AvIxEebHZM0P',
+				pipeName: 'concat',
+				pipeDescription:
+					'O operador concat do RxJS é usado para concatenar várias fontes de dados (observáveis) em uma só. Ele funciona da seguinte maneira: quando a primeira fonte de dados (observável) é assinada, os valores emitidos por ela são passados para o próximo observador. Quando a primeira fonte de dados se encerra, a próxima fonte de dados é assinada e seus valores são passados para o próximo observador. Isso continua até que todas as fontes de dados tenham sido concatenadas e encerradas.',
+				pipeUtilities: [
+					'Quando você precisa concatenar várias fontes de dados em uma só e garantir que os valores sejam emitidos na ordem correta. Por exemplo, você pode usar o concat para concatenar duas chamadas de API e garantir que os dados da primeira chamada sejam processados antes dos dados da segunda chamada.',
+					'Quando você precisa garantir que todos os dados de uma fonte de dados sejam processados antes de passar para a próxima fonte de dados. Por exemplo, você pode usar o concat para concatenar vários arquivos de dados e garantir que todos os dados de um arquivo sejam processados antes de passar para o próximo arquivo.',
+					'Quando você precisa garantir que uma ação específica seja executada após todas as fontes de dados terem sido processadas. Por exemplo, você pode usar o concat para concatenar várias operações de gravação de dados e, em seguida, usar o operador finalize para garantir que uma mensagem de "Gravação concluída" seja exibida após todas as operações de gravação terem sido concluídas.',
+					'Quando você precisa concatenar observáveis que emitem em momentos diferentes, por exemplo, você pode usar o concat para concatenar um observable que emite quando o botão é clicado, com um observable que emite de forma intervalar.',
+				],
+				pipeTips: [
+					'Concatenar duas ou mais chamadas de API e garantir que os dados da primeira chamada sejam processados antes dos dados da segunda chamada.',
+					'Concatenar vários arquivos de dados e garantir que todos os dados de um arquivo sejam processados antes de passar para o próximo arquivo.',
+					'Concatenar várias operações de gravação de dados e, em seguida, usar o operador finalize para garantir que uma mensagem de "Gravação concluída" seja exibida após todas as operações de gravação terem sido concluídas.',
+					'Concatenar observáveis que emitem em momentos diferentes, como um observable que emite quando o botão é clicado, com um observable que emite de forma intervalar.',
+				],
+				pipeObservation:
+					'Em resumo, você deve considerar usar o operador concat quando precisar garantir que as fontes de dados sejam processadas em ordem e que todos os dados de uma fonte de dados sejam processados antes de passar para a próxima fonte de dados.',
+
+				pipeLink: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/concat',
+				pipeVideo: 'blKxEy6mAv4',
 			},
 		],
 	},

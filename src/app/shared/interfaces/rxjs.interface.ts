@@ -11,7 +11,21 @@ export interface PipesInterface {
 	pipeDescription: string;
 	pipeUtilities: Array<string>;
 	pipeTips: Array<string>;
-	pipeObservation: Array<string>;
-	pipeLinks: string;
+	pipeObservation: string;
+	pipeLink: string;
+	pipeVideo: string;
+}
+
+export interface PipeFoundInterface {
+	group: string;
+	description: string;
+	icon: string;
+	pipeId: string;
+	pipeName: string;
+	pipeDescription: string;
+	pipeUtilities: Array<string>;
+	pipeTips: Array<string>;
+	pipeObservation: string;
+	pipeLink: string;
 	pipeVideo: string;
 }

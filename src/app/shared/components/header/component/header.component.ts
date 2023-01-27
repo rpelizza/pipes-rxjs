@@ -69,7 +69,7 @@ export class HeaderComponent {
 				const pipeObservationToLowerCase = this.textToLowerCase(
 					this.removeSpecialCharactersFromText(pipe.pipeObservation.toString())
 				);
-				const pipeLinksLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeLinks));
+				const pipeLinksLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeLink));
 				const pipeVideoLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeVideo));
 				const themeGroupLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(theme.group));
 				const themeDescriptionLowerCase = this.textToLowerCase(
