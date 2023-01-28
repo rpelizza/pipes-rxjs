@@ -174,6 +174,44 @@ export const mockPipes = [
 				],
 				pipeVideo: 'hoMNpEa9vRI',
 			},
+			{
+				pipeId: 'pipeForkJoin_155023',
+				pipeName: 'forkJoin',
+				pipeDescription:
+					'A pipe forkJoin é utilizada para combinar várias fontes de dados observáveis em um único objeto. Ele espera receber um array de observables e retorna um observable que emite um array de valores emitidos pelos observables originais, na ordem em que foram passados. É útil quando precisamos combinar informações de diferentes fontes antes de prosseguir com o fluxo de dados.',
+				pipeObservation:
+					'A pipe forkJoin pode não ser tão útil em situações em que os dados precisam ser combinados de forma dinâmica ou em fluxos de dados assíncronos, pois ela espera receber todos os observables de entrada antes de emitir um valor.',
+				pipeUtilities: [
+					'Combinar informações de diferentes fontes antes de prosseguir com o fluxo de dados',
+					'Combinar resultados de várias requisições HTTP',
+					'Combinar dados de diferentes componentes de uma aplicação',
+					'Combinar dados de diferentes streams de dados',
+				],
+				pipeTips: [
+					'Tenha cuidado ao utilizar forkJoin em fluxos de dados assíncronos',
+					'Lembre-se de que forkJoin espera que todos os observables emitições antes de emitir um valor',
+					'ForkJoin é uma operação síncrona',
+					'ForkJoin não segue ordem de entrada dos observables',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/forkjoin',
+					},
+					{
+						pipeSiteName: 'RxJS Docs',
+						pipeSiteURL: 'https://rxjs-dev.firebaseapp.com/api/index/function/forkJoin',
+					},
+					{ pipeSiteName: 'RxJS marbles', pipeSiteURL: 'https://rxmarbles.com/#forkJoin' },
+				],
+				pipeVideo: 'uW4UBF5wELQ',
+				// pipeCode: [
+				// 	{
+				// 		pipeCodeDescription: 'Exemplo 1: Utilizando forkJoin para juntar os resultados de duas chamadas de API assíncronas',
+				// 		pipeCode
+				// 	}
+				// ]
+			},
 		],
 	},
 	{
