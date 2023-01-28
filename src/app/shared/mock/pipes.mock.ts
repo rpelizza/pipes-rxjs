@@ -39,6 +39,7 @@ export const mockPipes = [
 					},
 				],
 				pipeVideo: '5ZUZFyxgktE',
+				pipeCode: 'https://gist.github.com/rpelizza/b2bc8c4c0e0205ae3da9b02e3ea4e147.js',
 			},
 			{
 				pipeId: 'pipe_rxjs_combineLatest_20221231',
@@ -204,13 +205,6 @@ export const mockPipes = [
 					},
 					{ pipeSiteName: 'RxJS marbles', pipeSiteURL: 'https://rxmarbles.com/#forkJoin' },
 				],
-				pipeVideo: 'uW4UBF5wELQ',
-				// pipeCode: [
-				// 	{
-				// 		pipeCodeDescription: 'Exemplo 1: Utilizando forkJoin para juntar os resultados de duas chamadas de API assíncronas',
-				// 		pipeCode
-				// 	}
-				// ]
 			},
 		],
 	},

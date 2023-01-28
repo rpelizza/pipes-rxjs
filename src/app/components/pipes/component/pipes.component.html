@@ -95,7 +95,13 @@
 				</mat-tab>
 				<mat-tab label="Exemplo (Código)">
 					<mat-card>
-						<mat-card-content>Código aqui</mat-card-content>
+						<mat-card-content>
+							<div class="row">
+								<div class="col-12">
+									<script [src]="item.pipeCode"></script>
+								</div>
+							</div>
+						</mat-card-content>
 					</mat-card>
 				</mat-tab>
 			</mat-tab-group>

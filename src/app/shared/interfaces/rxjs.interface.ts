@@ -14,6 +14,7 @@ export interface PipesInterface {
 	pipeTips: Array<string>;
 	pipeLinks: Array<PipeLinksInterface>;
 	pipeVideo: string;
+	pipeCode?: string;
 }
 
 export interface PipeLinksInterface {
@@ -33,4 +34,5 @@ export interface PipeFoundInterface {
 	pipeObservation: string;
 	pipeLinks: Array<PipeLinksInterface>;
 	pipeVideo: string;
+	pipeCode?: string;
 }
