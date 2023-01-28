@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { PipeFoundInterface, RxjsInterface } from 'src/app/shared/interfaces/rxjs.interface';
 import { mockPipes } from 'src/app/shared/mock/pipes.mock';
@@ -13,7 +14,11 @@ export class PipesComponent implements OnInit {
 	private mockedPipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
 	public pipeFound: Array<PipeFoundInterface> = [];
 
-	constructor(private readonly _route: ActivatedRoute, private _snackBar: MatSnackBar) {}
+	constructor(
+		private readonly _route: ActivatedRoute,
+		private _snackBar: MatSnackBar,
+		private readonly _sanitizer: DomSanitizer
+	) {}
 
 	ngOnInit(): void {
 		this._route.paramMap.subscribe((params) => {
@@ -48,5 +53,8 @@ export class PipesComponent implements OnInit {
 
 	public errorVideo(): void {
 		this._snackBar.open('Video não encontrado / Falha ao carregar', 'Fechar');
+	}
+	public safeURL(url: string): string {
+		return this._sanitizer.bypassSecurityTrustResourceUrl(url) as string;
 	}
 }
