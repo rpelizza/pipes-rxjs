@@ -206,6 +206,96 @@ export const mockPipes = [
 					{ pipeSiteName: 'RxJS marbles', pipeSiteURL: 'https://rxmarbles.com/#forkJoin' },
 				],
 			},
+			{
+				pipeId: 'pipe_merge_9374857392857392857392857392857',
+				pipeName: 'merge',
+				pipeDescription:
+					'A pipe merge permite juntar vários observáveis em um único observável. Ela faz isso emitindo todas as emissões dos observáveis juntos, na ordem em que elas são emitidas. É útil quando precisamos trabalhar com várias fontes de dados simultaneamente.',
+				pipeObservation:
+					'A pipe merge pode não ser tão útil em casos em que precisamos manter as emissões dos observáveis distintas, pois ela as junta em uma única emissão.',
+				pipeUtilities: [
+					'Juntar vários observáveis em um único observável',
+					'Trabalhar com várias fontes de dados simultaneamente',
+					'Manter a ordem das emissões',
+					'Combinar dados de diferentes fontes',
+				],
+				pipeTips: [
+					'Lembre-se de que a pipe merge junta as emissões dos observáveis em uma única emissão',
+					'Use-a com cuidado se precisar manter as emissões dos observáveis distintas',
+					'Combine-a com outras pipes para trabalhar com os dados de maneira mais eficiente',
+					'Teste-a antes de usá-la em produção para garantir que ela atende às suas necessidades',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/merge',
+					},
+					{ pipeSiteName: 'RxMarbles', pipeSiteURL: 'https://rxmarbles.com/merge/' },
+					{ pipeSiteName: 'RxJS Documentação', pipeSiteURL: 'https://rxjs.dev/api/index/function/merge' },
+				],
+				pipeVideo: 'avZiH2LHqNc',
+			},
+			{
+				pipeId: 'pipe_mergeAll_1234567890',
+				pipeName: 'mergeAll',
+				pipeDescription:
+					'A pipe mergeAll é utilizada para combinar múltiplas observables em uma única saída. Ela funciona de maneira semelhante à pipe merge, mas diferencia-se dela no fato de que ela espera que todas as observables fornecidas emitam pelo menos uma vez antes de emitir sua saída. Isso garante que todas as observables fornecidas sejam completadas antes de emitir a saída final.',
+				pipeObservation:
+					'É importante observar que a pipe mergeAll pode não ser tão útil quando se deseja combinar observables que podem emitir valores de forma assíncrona, pois ela espera que todas as observables emitam pelo menos uma vez antes de emitir sua saída.',
+				pipeUtilities: [
+					'Combinar observables que precisam ser completadas antes de emitir sua saída',
+					'Combinar observables que precisam emitir valores de forma síncrona',
+					'Combinar observables que precisam emitir valores de forma ordenada',
+					'Combinar observables que precisam emitir todos os seus valores antes de emitir sua saída',
+				],
+				pipeTips: [
+					'Tenha cuidado ao utilizar a pipe mergeAll com observables que podem emitir valores de forma assíncrona, pois isso pode causar problemas com a saída final',
+					'Lembre-se de que a pipe mergeAll espera que todas as observables fornecidas emitam pelo menos uma vez antes de emitir sua saída',
+					'A pipe mergeAll pode ser útil quando se deseja combinar observables que precisam emitir valores de forma ordenada',
+					'Lembre-se de que a pipe mergeAll emite todos os valores das observables fornecidas antes de emitir sua saída final',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/mergeall',
+					},
+					{ pipeSiteName: 'Documentação do RxJS', pipeSiteURL: 'https://rxjs.dev/api/operators/mergeAll' },
+					{
+						pipeSiteName: 'Blog do RxJS',
+						pipeSiteURL: 'https://blog.rxjs.dev/learn-rxjs-operators-mergeall/',
+					},
+				],
+				pipeVideo: '4kylB0siYNE',
+			},
+			{
+				pipeId: 'pipe_pairwise_84957a9e9d23b9f3a7ed8e73',
+				pipeName: 'pairwise',
+				pipeDescription:
+					'A pipe pairwise é utilizada para emitir um valor quando dois valores consecutivos são emitidos pelo observable. Ela retorna um novo observable que emite arrays de dois elementos, onde o primeiro elemento é o valor anterior emitido pelo observable original e o segundo elemento é o valor atual.',
+				pipeObservation:
+					'A pipe pairwise pode não ser tão útil em casos onde não é necessário comparar valores consecutivos emitidos pelo observable.',
+				pipeUtilities: [
+					'Comparar valores consecutivos emitidos pelo observable',
+					'Analisar mudanças de estado em aplicações',
+					'Criar lógicas de negócio baseadas em valores consecutivos',
+					'Manipular informações de forma mais precisa',
+				],
+				pipeTips: [
+					'Lembre-se de que a pipe pairwise sempre retorna um novo observable',
+					'Sempre verifique se a pipe pairwise é realmente necessária antes de utilizá-la',
+					'A pipe pairwise só irá emitir valores quando houver pelo menos dois valores consecutivos emitidos pelo observable original',
+					'Lembre-se de que a pipe pairwise não irá emitir um valor inicial, somente valores consecutivos',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/transformation/pairwise',
+					},
+					{ pipeSiteName: 'RxJS Documentation', pipeSiteURL: 'https://rxjs.dev/api/operators/pairwise' },
+					{ pipeSiteName: 'RxMarbles', pipeSiteURL: 'https://rxmarbles.com/pairwise' },
+				],
+				pipeVideo: 'xIZ8GYVPQqA',
+			},
 		],
 	},
 	{
