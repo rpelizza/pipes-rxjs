@@ -47,8 +47,8 @@ p {
 	&.warning {
 		text-align: center;
 		color: #f44336;
-		background-color: rgba(244, 67, 54, 0.0588235294);
-		font-size: 12px;
+		background-color: rgb(244 67 54 / 16%);
+		font-size: 13px;
 		padding: 5px;
 		font-weight: 500;
 	}
