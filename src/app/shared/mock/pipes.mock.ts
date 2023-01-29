@@ -296,6 +296,143 @@ export const mockPipes = [
 				],
 				pipeVideo: 'xIZ8GYVPQqA',
 			},
+			{
+				pipeId: 'pipe_race_938475029385750293857502938575029385750293857',
+				pipeName: 'race',
+				pipeDescription:
+					'A pipe race permite que você execute vários observáveis ​​simultaneamente e retorne o primeiro que emitir um valor. Isso é útil quando você deseja obter o primeiro resultado de várias fontes de dados diferentes.',
+				pipeObservation:
+					'É importante notar que a pipe race não garante que os observáveis ​​não emitirão mais valores após o primeiro valor emitido. Isso significa que, se você deseja parar de ouvir outros observáveis ​​após o primeiro valor emitido, deve usar o operador take.',
+				pipeUtilities: [
+					'Encontrar o primeiro resultado de várias fontes de dados diferentes',
+					'Interromper ouvir observáveis ​​após o primeiro valor emitido',
+					'Escolher entre vários observáveis ​​com base no primeiro valor emitido',
+					'Combinar vários observáveis ​​em um único fluxo de dados',
+				],
+				pipeTips: [
+					'Lembre-se de usar o operador take para interromper ouvir observáveis ​​após o primeiro valor emitido',
+					'Tenha cuidado ao usar a pipe race com observáveis ​​intermináveis',
+					'A pipe race é útil para escolher entre várias fontes de dados diferentes',
+					'Você pode combinar a pipe race com outros operadores, como map e filter, para processar os dados antes de escolher entre eles',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/race',
+					},
+					{
+						pipeSiteName: 'RxJS em português',
+						pipeSiteURL: 'https://rxjs-pt.github.io/operators/combination/race',
+					},
+					{ pipeSiteName: 'RxJS documentation', pipeSiteURL: 'https://rxjs.dev/api/operators/race' },
+				],
+				pipeVideo: 'Z_7snklhY2g',
+			},
+			{
+				pipeId: 'pipeStartWith_80caracteres_150caracteres',
+				pipeName: 'startWith',
+				pipeDescription:
+					'A pipe startWith é usada para emitir um valor antes de emitir os valores do observable original. Isso é útil quando queremos adicionar um valor inicial ao observable.',
+				pipeObservation:
+					'A pipe startWith pode não ser tão útil quando não há necessidade de adicionar um valor inicial ao observable.',
+				pipeUtilities: [
+					'Adicionar um valor inicial ao observable',
+					'Inicializar um observable com um valor padrão',
+					'Emitir um valor antes de emitir os valores do observable original',
+					'Adicionar um valor default ao observable',
+				],
+				pipeTips: [
+					'Sempre lembre de passar o valor inicial como primeiro argumento para a pipe startWith',
+					'A pipe startWith pode ser usada em conjunto com outras pipes para transformar o observable',
+					'A pipe startWith é uma pipe não encadeável, ou seja, deve ser aplicada antes de qualquer outra pipe',
+					'A pipe startWith é uma pipe de curto circuito, ou seja, ela encerra o fluxo de dados assim que o valor inicial é emitido',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/startwith',
+					},
+					{
+						pipeSiteName: 'RxJS - Documentação Oficial',
+						pipeSiteURL: 'https://rxjs-dev.firebaseapp.com/api/index/function/startWith',
+					},
+					{
+						pipeSiteName: 'RxJS - Blog',
+						pipeSiteURL: 'https://rxjs-dev.firebaseapp.com/blog/2019-08-20-startwith-operator',
+					},
+				],
+				pipeVideo: 'S0FzUNYE0kY',
+			},
+			{
+				pipeId: 'withLatestFromPipe1234567890',
+				pipeName: 'withLatestFrom',
+				pipeDescription:
+					'A pipe withLatestFrom combina o valor mais recente de um Observable com o valor mais recente de outro Observable, emitindo o resultado como um novo Observable. É útil quando precisamos combinar o valor de dois ou mais Observables de forma assíncrona.',
+				pipeObservation:
+					'A pipe withLatestFrom pode não ser tão útil em situações em que os Observables combinados são muito grandes ou emitem muitos valores, pois isso pode causar problemas de desempenho e tornar o código difícil de gerenciar.',
+				pipeUtilities: [
+					'Combinar valores de dois ou mais Observables de forma assíncrona',
+					'Filtrar valores de um Observable baseado no valor mais recente de outro Observable',
+					'Combinar valores de dois ou mais fluxos de dados para criar uma nova saída',
+					'Combinar valores de dois ou mais Observables para criar uma nova saída reativa',
+				],
+				pipeTips: [
+					'Lembre-se de que a pipe withLatestFrom combina somente o valor mais recente de cada Observable, então é importante garantir que os Observables combinados sejam emitidos com frequência suficiente',
+					'Se você estiver combinando muitos Observables, é importante considerar a ordem em que eles são combinados, pois isso pode afetar o resultado final',
+					'Tenha cuidado ao usar a pipe withLatestFrom com Observables que emitem valores infinitamente, pois isso pode causar problemas de desempenho',
+					'Lembre-se de que a pipe withLatestFrom combina somente o valor mais recente de cada Observable, então é importante garantir que os Observables combinados sejam emitidos com frequência suficiente',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/withlatestfrom',
+					},
+					{
+						pipeSiteName: 'RxJS Docs',
+						pipeSiteURL: 'https://rxjs.dev/api/operators/withLatestFrom',
+					},
+					{
+						pipeSiteName: 'RxJS Marbles',
+						pipeSiteURL: 'https://rxmarbles.com/withlatestfrom',
+					},
+				],
+				pipeVideo: 'kFRU1I30Cvc',
+			},
+			{
+				pipeId: 'rxjs-zip-pipe-83729103847293847392847',
+				pipeName: 'zip',
+				pipeDescription:
+					'A pipe zip combina os valores de dois ou mais observáveis de acordo com a posição do valor. Ela emite um novo valor quando todos os observáveis emitem um novo valor, e cada valor combinado é uma tupla com os valores correspondentes de cada observável.',
+				pipeObservation:
+					'A pipe zip pode não ser tão útil quando os observáveis não possuem a mesma quantidade de emissões, pois pode gerar tuplas com valores undefined.',
+				pipeUtilities: [
+					'Combinar dados de diferentes fontes para criar um novo fluxo de dados',
+					'Sincronizar ações entre diferentes fluxos de dados',
+					'Criar tuplas com valores correspondentes de diferentes observáveis',
+					'Combinar valores de um array com valores de um objeto',
+					'Sincronizar requisições assíncronas',
+				],
+				pipeTips: [
+					'Sempre verifique se os observáveis possuem a mesma quantidade de emissões antes de utilizar a pipe zip',
+					'Utilize a pipe zip com observáveis que possuem a mesma duração',
+					'Lembre-se que a pipe zip emite um novo valor somente quando todos os observáveis emitem um novo valor',
+					'A pipe zip não funciona com observáveis infinitos',
+					'Utilize a pipe zip para combinar valores de diferentes observáveis e não para combinar valores de um mesmo observável',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/combination/zip',
+					},
+					{ pipeSiteName: 'RxMarbles', pipeSiteURL: 'https://rxmarbles.com/zip/' },
+					{ pipeSiteName: 'RxJS Docs', pipeSiteURL: 'https://rxjs.dev/api/index/function/zip' },
+					{
+						pipeSiteName: 'RxJS GitHub',
+						pipeSiteURL: 'https://github.com/ReactiveX/rxjs/blob/main/src/internal/observable/zip.ts',
+					},
+				],
+				pipeVideo: '91nDEXiJJEM',
+			},
 		],
 	},
 	{
@@ -303,7 +440,37 @@ export const mockPipes = [
 		icon: 'wifi_protected_setup',
 		description:
 			'As pipes de condicionais (conditional) do RxJS são operações que permitem a você tomar decisões sobre como um fluxo de dados deve ser manipulado com base em determinadas condições.',
-		pipes: [],
+		pipes: [
+			{
+				pipeId: 'rxjs_pipe_defaultIfEmpty_0123456789',
+				pipeName: 'defaultIfEmpty',
+				pipeDescription:
+					'A pipe defaultIfEmpty é usada para emitir um valor padrão caso a stream de entrada esteja vazia. Isso é útil para evitar erros de null ou undefined quando a stream esperada não emite valores.',
+				pipeObservation:
+					'A pipe defaultIfEmpty pode não ser tão útil em situações onde é esperado que a stream de entrada esteja realmente vazia, pois ela irá emitir o valor padrão independentemente disso.',
+				pipeUtilities: [
+					'Permitir que a stream continue em caso de falha',
+					'Fornecer valor padrão para usar em caso de stream vazia',
+					'Tratar situações de entrada vazia de forma segura',
+					'Usar como uma forma de inicialização de valores',
+				],
+				pipeTips: [
+					'Tenha cuidado ao usar com stream que podem realmente estar vazias',
+					'Lembre-se de definir o valor padrão adequado para a sua situação específica',
+					'Use junto com outras pipes para tratar situações de erro',
+					'Experimente usar com diferentes tipos de stream, como observáveis e subjects',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/conditional/defaultifempty',
+					},
+					{ pipeSiteName: 'RxJS Docs', pipeSiteURL: 'https://rxjs.dev/api/operators/defaultIfEmpty' },
+					{ pipeSiteName: 'RxMarbles', pipeSiteURL: 'https://rxmarbles.com/#defaultIfEmpty' },
+				],
+				pipeVideo: 'eTR1ng8rE6A',
+			},
+		],
 	},
 	{
 		group: 'Criação',
