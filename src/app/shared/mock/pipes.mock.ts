@@ -503,6 +503,38 @@ export const mockPipes = [
 				],
 				pipeVideo: '908PDgRjlmc',
 			},
+			{
+				pipeId: 'pipe_rxjs_iif_837293847293847283748',
+				pipeName: 'iif',
+				pipeDescription:
+					'A pipe iif é usada para avaliar uma condição e retornar um fluxo de dados condicionalmente. Ela é útil para lidar com fluxos de dados dinâmicos e condicionais.',
+				pipeObservation:
+					'A pipe iif pode não ser tão útil em situações onde a condição é muito simples e pode ser facilmente resolvida com outras pipes como filter ou takeWhile.',
+				pipeUtilities: [
+					'Permite lidar com fluxos de dados dinâmicos',
+					'Permite retornar fluxos de dados condicionalmente',
+					'Pode ser usada para fazer operações condicionais complexas',
+					'Pode ser combinada com outras pipes para lidar com fluxos de dados complexos',
+				],
+				pipeTips: [
+					'Sempre verifique se a pipe iif é realmente necessária antes de usá-la',
+					'Lembre-se de sempre passar as duas funções observables para a pipe iif',
+					'Combine a pipe iif com outras pipes para lidar com fluxos de dados complexos',
+					'Use a pipe iif com cuidado para não causar problemas de performance',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/conditional/iif',
+					},
+					{ pipeSiteName: 'RxJS Docs', pipeSiteURL: 'https://rxjs.dev/api/index/function/iif' },
+					{
+						pipeSiteName: 'RxJS Tutorials',
+						pipeSiteURL: 'https://www.rxjstutorial.com/rxjs-conditional-operator-iif/',
+					},
+				],
+				pipeVideo: 'Yh_ymXzRIsI',
+			},
 		],
 	},
 	{
