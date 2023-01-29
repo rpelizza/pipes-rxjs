@@ -470,6 +470,39 @@ export const mockPipes = [
 				],
 				pipeVideo: 'eTR1ng8rE6A',
 			},
+			{
+				pipeId: 'pipe_rxjs_every_1529384750394',
+				pipeName: 'every',
+				pipeDescription:
+					'A pipe every do RXJS verifica se todos os elementos de um observable cumprem uma determinada condição. Ela retorna um novo observable que emitirá true se todos os elementos cumprirem a condição e false caso contrário.',
+				pipeObservation:
+					'A pipe every pode não ser tão útil em casos onde é necessário verificar apenas alguns elementos de um observable, pois ela verifica todos os elementos independentemente do resultado.',
+				pipeUtilities: [
+					'Verificar se todos os elementos de um observable cumprem uma determinada condição',
+					'Filtar elementos de um observable que não cumprem uma determinada condição',
+					'Emitir um valor booleano indicando se todos os elementos cumprem uma determinada condição',
+					'Trabalhar com observables de arrays ou outras estruturas de dados',
+				],
+				pipeTips: [
+					'Sempre verificar se a condição passada para a pipe every é a desejada antes de usá-la',
+					'Lembrar que a pipe every irá verificar todos os elementos de um observable, mesmo que alguns já tenham cumprido a condição',
+					'Utilizar a pipe every em conjunto com outras pipes como filter ou map para trabalhar com os resultados obtidos',
+					'Testar a pipe every com diferentes tipos de observables antes de usá-la em produção',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RXJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/conditional/every',
+					},
+					{ pipeSiteName: 'RXJS Marbles', pipeSiteURL: 'https://rxjs-marbles.com/#every' },
+					{ pipeSiteName: 'RXJS Docs', pipeSiteURL: 'https://rxjs.dev/api/operators/every' },
+					{
+						pipeSiteName: 'RXJS GitHub',
+						pipeSiteURL: 'https://github.com/ReactiveX/rxjs/blob/main/src/internal/operators/every.ts',
+					},
+				],
+				pipeVideo: '908PDgRjlmc',
+			},
 		],
 	},
 	{

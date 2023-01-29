@@ -8,7 +8,9 @@
 					</button>
 				</li>
 				<li>
-					<button mat-raised-button [routerLink]="'/home'"><mat-icon>merge</mat-icon>{{ item.group }}</button>
+					<button mat-raised-button color="accent" [routerLink]="'/home'">
+						<mat-icon>merge</mat-icon>{{ item.group }}
+					</button>
 				</li>
 				<li>
 					<button mat-raised-button disabled><mat-icon>done</mat-icon>{{ item.pipeName }}</button>
