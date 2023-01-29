@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -11,8 +11,11 @@ import { mockPipes } from 'src/app/shared/mock/pipes.mock';
 	styleUrls: ['./pipes.component.scss'],
 })
 export class PipesComponent implements OnInit {
+	@ViewChild('iframe', { static: false }) iframe!: ElementRef<HTMLIFrameElement>;
+
 	private mockedPipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
 	public pipeFound: Array<PipeFoundInterface> = [];
+	public gistUrl!: string;
 
 	constructor(
 		private readonly _route: ActivatedRoute,
@@ -24,7 +27,35 @@ export class PipesComponent implements OnInit {
 		this._route.paramMap.subscribe((params) => {
 			this.getPipeById(params.get('id') as string);
 			this.createVideoComponent();
+			this.getGistFromPipeFound();
 		});
+	}
+
+	private getGistFromPipeFound(): void {
+		this.pipeFound.forEach((pipe) => {
+			if (pipe.pipeCode) {
+				this.gistUrl = pipe.pipeCode;
+			}
+		});
+	}
+
+	private createGistDoc(): void {
+		const doc = this.iframe.nativeElement.contentDocument as Document;
+		if (doc) {
+			const content = `
+				<html>
+				<head>
+				  <base target="_parent">
+				</head>
+				<body>
+				<script type="text/javascript" src="${this.gistUrl}"></script>
+				</body>
+			  </html>
+			`;
+			doc.open();
+			doc.write(content);
+			doc.close();
+		}
 	}
 
 	private createVideoComponent(): void {
@@ -49,6 +80,12 @@ export class PipesComponent implements OnInit {
 			});
 		});
 		return this.pipeFound;
+	}
+
+	public tabSelected(event: { index: number; tab: unknown }): void {
+		if (event.index === 2) {
+			this.createGistDoc();
+		}
 	}
 
 	public errorVideo(): void {

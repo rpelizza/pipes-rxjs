@@ -93,3 +93,9 @@ ul.utilitiesAndTips {
 		width: auto;
 	}
 }
+
+iframe {
+	width: 100%;
+	height: calc(100vh - 350px);
+	border: 0;
+}
