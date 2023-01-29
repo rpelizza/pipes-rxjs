@@ -18,10 +18,8 @@ export class HeaderComponent {
 	constructor(private readonly _drawerService: DrawerService, private readonly _router: Router) {}
 
 	private removeSpecialCharactersFromText(text: string): string {
-		return text
-			.normalize('NFD')
-			.replace(/[\u0300-\u036f]/g, '')
-			.replace(/[^\w\s]/gi, '');
+		const normalizedText = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+		return normalizedText.replace(/[^\w\s]/gi, '');
 	}
 
 	private textToLowerCase(text: string): string {
@@ -48,7 +46,9 @@ export class HeaderComponent {
 	}
 
 	public search($event: KeyboardEvent): void {
-		const searchText = ($event.target as HTMLInputElement).value;
+		const searchText = this.textToLowerCase(
+			this.removeSpecialCharactersFromText(($event.target as HTMLInputElement).value)
+		);
 		this.autoCompleteOptions = [];
 		const searchResults: Array<Pick<PipesInterface, 'pipeId' | 'pipeName'>> = [];
 		if (!searchText) {
@@ -69,15 +69,12 @@ export class HeaderComponent {
 				const pipeObservationToLowerCase = this.textToLowerCase(
 					this.removeSpecialCharactersFromText(pipe.pipeObservation.toString())
 				);
-				const pipeVideoLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeVideo));
-				const searchTextLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(searchText));
 				if (
-					pipeNameLowerCase.includes(searchTextLowerCase) ||
-					pipeDescriptionLowerCase.includes(searchTextLowerCase) ||
-					pipeUtilitiesLowerCase.includes(searchTextLowerCase) ||
-					pipeTipsLowerCase.includes(searchTextLowerCase) ||
-					pipeObservationToLowerCase.includes(searchTextLowerCase) ||
-					pipeVideoLowerCase.includes(searchTextLowerCase)
+					pipeNameLowerCase.includes(searchText) ||
+					pipeDescriptionLowerCase.includes(searchText) ||
+					pipeUtilitiesLowerCase.includes(searchText) ||
+					pipeTipsLowerCase.includes(searchText) ||
+					pipeObservationToLowerCase.includes(searchText)
 				) {
 					searchResults.push({
 						pipeId: pipe.pipeId,
