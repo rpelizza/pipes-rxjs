@@ -9,5 +9,9 @@ import { mockPipes } from 'src/app/shared/mock/pipes.mock';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-	public pipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
+	public pipes: Array<RxjsInterface>;
+
+	constructor() {
+		this.pipes = mockPipes as Array<RxjsInterface>;
+	}
 }

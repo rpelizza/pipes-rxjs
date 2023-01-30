@@ -9,9 +9,9 @@ import { DrawerService } from './shared/services/drawer/drawer.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
 	public isOpen: boolean = true;
-	private subscription!: Subscription;
+	public subscription!: Subscription;
 
-	constructor(private drawerService: DrawerService) {}
+	constructor(public drawerService: DrawerService) {}
 
 	ngOnInit() {
 		this.subscription = this.drawerService.onStateChanged().subscribe((state: boolean) => {

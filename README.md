@@ -1,27 +1,14 @@
-# PipesRxjs
+# pipes-rxjs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+Este é um projeto open source que visa fornecer informações precisas e exemplos práticos para ajudar os desenvolvedores a usar pipes do RxJS em suas aplicações. Qualquer pessoa pode contribuir com o projeto para criar uma comunidade de desenvolvedores melhor.
 
-## Development server
+## Como usar
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para rodar o projeto, execute `npm run start`. Isso iniciará o servidor de desenvolvimento e permitirá que você visualize o aplicativo no seu navegador padrão.
+Para executar o lint, execute `npm run lint`. Isso garante que sua código seja escrito corretamente e seja legível para outras contribuições.
+Para executar os testes, execute `npm run test`. Isso fornecerá resultados sobre quais partes de seu código falharam no teste unitário.
 
-## Code scaffolding
+## Construir projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `npm run build` para construir o projeto. O comando construirá o aplicativo e armazenará todos os artefatos gerados na pasta `/build` dentro da raiz do projeto.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

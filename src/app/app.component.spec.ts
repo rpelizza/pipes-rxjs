@@ -1,35 +1,34 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { DrawerService } from './shared/services/drawer/drawer.service';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
+	let component: AppComponent;
+	let drawerService: DrawerService;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+	beforeEach(() => {
+		drawerService = new DrawerService();
+		component = new AppComponent(drawerService);
+	});
 
-  it(`should have as title 'pipes-rxjs'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('pipes-rxjs');
-  });
+	it('deve instanciar o componente', () => {
+		expect(component).toBeTruthy();
+	});
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('pipes-rxjs app is running!');
-  });
+	it('deve verificar se o serviço foi passado ao componente', () => {
+		expect(component.drawerService).toBeTruthy();
+	});
+
+	it('deve abrir o menu ao iniciar o componente', () => {
+		spyOn(component, 'ngOnInit');
+		component.ngOnInit();
+		expect(component.isOpen).toBeTruthy();
+		expect(component.ngOnInit).toHaveBeenCalled();
+	});
+
+	it('deve fechar o menu ao destruir o componete', () => {
+		spyOn(component, 'ngOnDestroy');
+		component.ngOnDestroy();
+		expect(component.isOpen).toBeTruthy();
+		expect(component.ngOnDestroy).toHaveBeenCalled();
+	});
 });

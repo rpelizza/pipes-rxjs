@@ -12,77 +12,50 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
 	@ViewChild('inputRef', { static: false }) inputRef!: ElementRef<HTMLInputElement>;
 
-	private mockedPipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
+	public mockedPipes: Array<RxjsInterface> = mockPipes as Array<RxjsInterface>;
 	public autoCompleteOptions: Array<Partial<PipesInterface>> = [];
 
-	constructor(private readonly _drawerService: DrawerService, private readonly _router: Router) {}
+	constructor(public _drawerService: DrawerService, public _router: Router) {}
 
-	private removeSpecialCharactersFromText(text: string): string {
+	private formatText(text: string): string {
 		const normalizedText = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-		return normalizedText.replace(/[^\w\s]/gi, '');
-	}
-
-	private textToLowerCase(text: string): string {
-		return text.toLowerCase();
+		return normalizedText.replace(/[^\w\s]/gi, '').toLowerCase();
 	}
 
 	public toggleDrawer() {
-		if (this._drawerService.isDrawerOpen) {
-			this._drawerService.close();
-		} else {
-			this._drawerService.open();
-		}
+		this._drawerService.toggle();
 	}
 
 	public redirectToPipePage(pipeId: string) {
-		if (pipeId === '') {
-			this._router.navigate(['/home']);
-		} else {
-			this._router.navigate([`/pipes/${pipeId}`]);
-		}
-
 		this.autoCompleteOptions = [];
 		this.inputRef.nativeElement.value = '';
+
+		if (pipeId !== '') {
+			this._router.navigate([`/pipes/${pipeId}`]);
+		} else {
+			this._router.navigate(['/home']);
+		}
 	}
 
-	public search($event: KeyboardEvent): void {
-		const searchText = this.textToLowerCase(
-			this.removeSpecialCharactersFromText(($event.target as HTMLInputElement).value)
-		);
+	public search(event: KeyboardEvent): void {
+		const searchText = this.formatText((event.target as HTMLInputElement).value);
+
 		this.autoCompleteOptions = [];
-		const searchResults: Array<Pick<PipesInterface, 'pipeId' | 'pipeName'>> = [];
-		if (!searchText) {
-			return;
-		}
-		this.mockedPipes.forEach((theme) => {
-			theme.pipes.forEach((pipe) => {
-				const pipeNameLowerCase = this.textToLowerCase(this.removeSpecialCharactersFromText(pipe.pipeName));
-				const pipeDescriptionLowerCase = this.textToLowerCase(
-					this.removeSpecialCharactersFromText(pipe.pipeDescription)
-				);
-				const pipeUtilitiesLowerCase = this.textToLowerCase(
-					this.removeSpecialCharactersFromText(pipe.pipeUtilities.toString())
-				);
-				const pipeTipsLowerCase = this.textToLowerCase(
-					this.removeSpecialCharactersFromText(pipe.pipeTips.toString())
-				);
-				const pipeObservationToLowerCase = this.textToLowerCase(
-					this.removeSpecialCharactersFromText(pipe.pipeObservation.toString())
-				);
-				if (
-					pipeNameLowerCase.includes(searchText) ||
-					pipeDescriptionLowerCase.includes(searchText) ||
-					pipeUtilitiesLowerCase.includes(searchText) ||
-					pipeTipsLowerCase.includes(searchText) ||
-					pipeObservationToLowerCase.includes(searchText)
-				) {
-					searchResults.push({
-						pipeId: pipe.pipeId,
-						pipeName: pipe.pipeName,
-					});
-				}
-			});
-		});
+		const searchResults = this.mockedPipes
+			.flatMap(({ pipes }) => pipes)
+			.filter((pipe) =>
+				[
+					pipe.pipeName,
+					pipe.pipeDescription,
+					pipe.pipeUtilities.toString(),
+					pipe.pipeTips.toString(),
+					pipe.pipeObservation.toString(),
+				]
+					.map(this.formatText)
+					.some((text) => text.includes(searchText))
+			)
+			.map(({ pipeId, pipeName }) => ({ pipeId, pipeName }));
+
 		if (searchResults.length > 0) {
 			this.autoCompleteOptions = searchResults;
 		}
