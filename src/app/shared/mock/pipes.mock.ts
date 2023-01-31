@@ -535,6 +535,41 @@ export const mockPipes = [
 				],
 				pipeVideo: 'Yh_ymXzRIsI',
 			},
+			{
+				pipeId: 'pipe-sequenceEqual-59f4029e4d1a',
+				pipeName: 'sequenceEqual',
+				pipeDescription:
+					'A pipe sequenceEqual é utilizada para comparar dois observáveis e retornar verdadeiro se todos os seus elementos são iguais e emitidos na mesma ordem. Caso contrário, retorna falso.',
+				pipeObservation:
+					'A pipe sequenceEqual pode não ser tão útil em situações em que a ordem dos elementos não é importante ou quando os elementos possuem diferentes tipos.',
+				pipeUtilities: [
+					'Comparar duas fontes de dados para verificar se são iguais',
+					'Verificar se a ordem dos elementos é importante',
+					'Comparar objetos complexos como arrays e objetos',
+					'Utilizar em testes unitários para verificar a igualdade de observáveis',
+				],
+				pipeTips: [
+					'Utilize a pipe sequenceEqual em conjunto com outras pipes para uma comparação mais detalhada',
+					'Lembre-se de que a ordem dos elementos é importante na comparação feita pela pipe',
+					'A pipe sequenceEqual compara somente o valor dos elementos, não as referências',
+					'Não utilize a pipe sequenceEqual para comparar elementos de tipos diferentes',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Documentação oficial RxJS',
+						pipeSiteURL: 'https://rxjs.dev/api/operators/sequenceEqual',
+					},
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/conditional/sequenceEqual',
+					},
+					{
+						pipeSiteName: 'Blog do Fabio Akita',
+						pipeSiteURL: 'https://akitaonrails.com/blog/2022/01/19/utilizando-o-rxjs-com-angular',
+					},
+				],
+				pipeVideo: 'zy1-JZDJ53M',
+			},
 		],
 	},
 	{
@@ -542,7 +577,39 @@ export const mockPipes = [
 		icon: 'create_new_folder',
 		description:
 			'As pipes de criação (creation) do RxJS são operações que permitem a você criar novos fluxos de dados a partir de fontes de dados existentes ou não',
-		pipes: [],
+		pipes: [
+			{
+				pipeId: 'rxjs-ajax-pipe-0123456789',
+				pipeName: 'ajax',
+				pipeDescription:
+					'A pipe ajax é usada para fazer requisições assíncronas a recursos externos. É uma operação de criação que permite fazer requisições HTTP e retornar um observable com a resposta da requisição.',
+				pipeObservation:
+					'A pipe ajax pode não ser tão útil em casos em que é necessário fazer requisições síncronas, pois ela só retorna a resposta quando a requisição for concluída.',
+				pipeUtilities: [
+					'Permite fazer requisições HTTP assíncronas',
+					'Retorna um observable com a resposta da requisição',
+					'Pode ser usada com outras pipes para manipular a resposta da requisição',
+					'Permite definir configurações adicionais na requisição',
+					'Suporta retornos de tipos diferentes, como JSON e texto',
+				],
+				pipeTips: [
+					'Não é indicada para requisições síncronas',
+					'É necessário importar a biblioteca rxjs/ajax antes de usá-la',
+					'Sempre verifique se a requisição foi bem sucedida antes de manipular a resposta',
+					'Use o método pipe para combinar a pipe ajax com outras pipes',
+					'Sempre verifique as configurações adicionais necessárias antes de fazer uma requisição',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/creation/ajax',
+					},
+					{ pipeSiteName: 'Site de exemplo', pipeSiteURL: 'https://exemplo.com/rxjs-ajax' },
+					{ pipeSiteName: 'Documentação oficial', pipeSiteURL: 'https://rxjs.dev/api/index/function/ajax' },
+				],
+				pipeVideo: 'oF8bk8HFg2A',
+			},
+		],
 	},
 	{
 		group: 'Tratamento de erro',
