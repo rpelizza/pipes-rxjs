@@ -650,6 +650,41 @@ export const mockPipes = [
 				],
 				pipeVideo: 'RpC7sv8_LIg',
 			},
+			{
+				pipeId: 'pipe_defer_1234567890123456789012345678901234567890',
+				pipeName: 'defer',
+				pipeDescription:
+					'A pipe `defer` permite que um observable seja criado somente quando é assinado. Isso é útil quando você quer que a criação de um observable seja atrasada até que alguém o assine, ou seja, quando alguém precisar dele. Isso é contrário aos operadores de criação como `of` ou `from`, que criam o observable imediatamente assim que são chamados.',
+				pipeObservation:
+					'A pipe `defer` não é tão útil em situações onde o observable precisa ser criado imediatamente, pois isso pode atrasar a obtenção de dados.',
+				pipeUtilities: [
+					'Permite a atrasar a criação de um observable até que alguém o assine',
+					'Útil para evitar a criação desnecessária de observables',
+					'Permite a implementação de lógica personalizada para a criação de um observable',
+					'Melhora a performance ao evitar a criação de observables desnecessários',
+				],
+				pipeTips: [
+					'Lembre-se de sempre assinar o observable criado com a pipe `defer` para obter dados',
+					'Não use a pipe `defer` para criar observables que precisam ser criados imediatamente',
+					'Utilize a lógica personalizada para a criação de observables de forma inteligente para maximizar a performance',
+					'Sempre que possível, tente evitar a criação de muitos observables desnecessários',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/creation/defer',
+					},
+					{
+						pipeSiteName: 'RxJS API Documentation',
+						pipeSiteURL: 'https://rxjs.dev/api/index/function/defer',
+					},
+					{
+						pipeSiteName: 'RxJS Operators Overview',
+						pipeSiteURL: 'https://xgrommx.github.io/rx-book/content/observable/creation/defer.html',
+					},
+				],
+				pipeVideo: 'k6nUhN-uhZA',
+			},
 		],
 	},
 	{
