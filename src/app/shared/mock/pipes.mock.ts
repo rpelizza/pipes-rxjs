@@ -609,6 +609,47 @@ export const mockPipes = [
 				],
 				pipeVideo: 'oF8bk8HFg2A',
 			},
+			{
+				pipeId: 'rxjs-create-pipe-1a2b3c4d5e6f7g8h9i0j',
+				pipeName: 'create',
+				pipeDescription:
+					'A pipe create permite criar um novo Observável a partir de um objeto, função ou evento. Isso é útil quando precisamos criar um fluxo de dados personalizado para uma determinada ação ou evento.',
+				pipeObservation:
+					'A pipe create não é tão útil quanto outras pipes, pois muitas vezes há outras pipes que já fornecem a mesma funcionalidade, como a pipe of ou fromEvent. É importante conhecer as outras pipes disponíveis e escolher a mais adequada para a sua necessidade.',
+				pipeUtilities: [
+					'Criar um fluxo de dados personalizado a partir de um objeto ou evento',
+					'Criar um Observável a partir de uma função',
+					'Emitir eventos manualmente',
+					'Inserir erros personalizados em um fluxo de dados',
+					'Criar um Observável baseado em tempo ou intervalo',
+				],
+				pipeTips: [
+					'Escolha a pipe adequada para a sua necessidade',
+					'Evite usar a pipe create quando outras pipes já oferecem a mesma funcionalidade',
+					'Conheça as outras pipes disponíveis para utilização',
+					'Use a pipe create para criar um fluxo de dados personalizado e diferenciado',
+					'Aprenda a tratar erros corretamente ao utilizar a pipe create',
+				],
+				pipeLinks: [
+					{
+						pipeSiteName: 'Learn RxJS',
+						pipeSiteURL: 'https://www.learnrxjs.io/learn-rxjs/operators/creation/create',
+					},
+					{
+						pipeSiteName: 'RxJS na Prática',
+						pipeSiteURL: 'https://www.rxjs-na-pratica.com.br/operators/creation/create.html',
+					},
+					{
+						pipeSiteName: 'Documentação Oficial RxJS',
+						pipeSiteURL: 'https://rxjs.dev/api/index/function/create',
+					},
+					{
+						pipeSiteName: 'Desvendando o RxJS',
+						pipeSiteURL: 'https://desvendandoorxjs.com.br/operators/creation/create.html',
+					},
+				],
+				pipeVideo: 'RpC7sv8_LIg',
+			},
 		],
 	},
 	{
